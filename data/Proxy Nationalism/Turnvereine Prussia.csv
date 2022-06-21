@@ -1,0 +1,546 @@
+﻿townkey1849;city;Cityname;population;kreiskey1849;district;region;Gründung;Jahr;Gesamt;Turnfreunde;Turner_1420;Turner_20;Turner;Beruf_Handwerk;Beruf_Gelehrte;Beruf_Kaufleute;Check_Gesamt;Check_Beruf;Check_Alter
+;Allenburg;Allenburg;3000;1;Königsberg;1;07.05.1862;1862;49;12;6;31;37;14;6;29;0;0;0
+;Braunsberg;Braunsberg;10200;1;Königsberg;1;01.06.1864;1864;60;45;4;11;15;19;14;27;0;0;0
+;Gutstadt;Gutstadt;3800;1;Königsberg;1;01.06.1864;1864;27;0;0;27;27;6;4;17;0;0;0
+;Heiligenbeil;Heiligenbeil;3000;1;Königsberg;1;20.06.1862;1862;62;39;9;14;23;25;16;21;0;0;0
+;Königsberg;Koenigsberg;96000;1;Königsberg;1;27.06.1842;1842;897;521;59;317;376;70;192;630;0;5;0
+;Labiau;Labiau;4500;;Königsberg;1;26.06.1861;1861;139;99;9;31;40;50;39;50;0;0;0
+;Liebstadt;Liebstadt;2000;;Königsberg;1;10.08.1862;1862;16;7;;9;9;3;4;9;0;0;0
+;Mehlsack;Mehlsack;3600;;Königsberg;1;02.06.1861;1861;36;12;3;21;24;13;11;12;0;0;0
+;Memel;Memel;20000;;Königsberg;1;01.09.1863;1863;93;2;0;91;91;80;9;4;0;0;0
+;Memel;Memel;20000;;Königsberg;1;17.05.1861;1861;280;0;23;257;280;47;50;170;0;13;0
+;Mohrungen;Mohrungen;5000;;Königsberg;1;20.03.1862;1862;29;0;0;29;29;4;8;17;0;0;0
+;Ortelsburg;Ortelsburg;1700;;Königsberg;1;24.06.1861;1861;48;23;5;20;25;7;24;17;0;0;0
+;Preussisch-Eylau;Preussisch-Eylau;3200;;Königsberg;1;01.06.1864;1864;52;15;10;27;37;24;19;9;0;0;0
+;Preussisch-Holland;Preussisch-Holland;4500;;Königsberg;1;17.07.1861;1861;30;15;2;13;15;2;13;15;0;0;0
+;Wehlau;Wehlau;5400;;Königsberg;1;26.04.1862;1862;60;40;0;20;20;na;na;na;0;#WERT!;0
+;Wormditt;Wormditt;4000;;Königsberg;1;18.06.1862;1862;41;17;0;24;24;5;7;29;0;0;0
+;Eydkuhnen;Eydkuhnen;1600;;Gumbinnen;2;08.07.1862;1862;54;26;0;28;28;1;0;53;0;0;0
+;Gumbinnen;Gumbinnen;7500;;Gumbinnen;2;12.10.1863;1863;34;8;0;26;26;11;6;17;0;0;0
+;Insterburg;Insterburg;12500;;Gumbinnen;2;05.04.1858;1858;133;92;3;41;14;28;15;90;-3;0;-30
+;Ragnit;Ragnit;3200;;Gumbinnen;2;22.05.1864;1864;163;80;0;83;83;63;28;72;0;0;0
+;Ruß;Russ;1900;;Gumbinnen;2;25.04.1863;1863;54;38;3;13;13;26;4;22;0;2;-3
+;Tilsit;Tilsit;17000;;Gumbinnen;2;24.06.1861;1861;228;116;33;79;112;34;24;170;0;0;0
+;Danzig;Danzig;84000;;Danzig;3;01.05.1860;1860;185;53;45;87;132;17;51;117;0;0;0
+;Danzig;Danzig;84000;;Danzig;3;08.03.1862;1862;111;23;na;na;na;76;5;30;#WERT!;0;#WERT!
+;Dirschau;Dirschau;6000;;Danzig;3;01.09.1862;1862;74;39;8;27;35;25;9;40;;0;
+;Elbing;Elbing;25000;;Danzig;3;16.07.1859;1859;124;26;22;76;98;17;22;55;0;30;0
+;Marienburg;Marienburg;8000;;Danzig;3;15.05.1861;1861;63;25;6;32;38;11;11;41;0;0;0
+;Neufahrwasser;Neufahrwasser;3500;;Danzig;3;11.11.1863;1863;39;4;3;32;35;13;10;16;0;0;0
+;Neustadt Westpreußen;Neustadt Westpreussen;3300;;Danzig;3;30.09.1863;1863;137;80;12;45;57;23;15;49;0;50;0
+;Preussisch Stargard;Preussisch Stargard;5000;;Danzig;3;26.06.1860;1860;66;33;13;20;33;75;4;37;0;-50;0
+;Tiegenhof;Tiegenhof;2500;;Danzig;3;30.08.1862;1862;40;25;3;12;15;5;10;25;0;0;0
+;Culm;Culm;8000;;Marienwerder;4;24.08.1861;1861;38;12;16;10;26;11;19;8;0;0;0
+;Deutsch-Krone;Deutsch-Krone;6000;;Marienwerder;4;13.12.1862;1862;33;0;4;29;33;13;3;17;0;0;0
+;Graudenz;Graudenz;10000;;Marienwerder;4;01.05.1859;1859;145;3;2;40;42;7;17;21;100;100;0
+;Marienwerder;Marienwerder;7000;;Marienwerder;4;01.10.1861;1861;29;37;0;92;92;29;27;73;-100;-100;0
+;Mewe;Mewe;4000;;Marienwerder;4;18.06.1862;1862;41;26;8;7;15;29;6;6;0;0;0
+;Neuenburg;Neuenburg;4000;;Marienwerder;4;na;na;;;;;;;;;0;0;0
+;Neumark;Neumark;1800;;Marienwerder;4;01.08.1862;1862;47;31;0;16;16;19;8;20;0;0;0
+;Schwetz;Schwetz;4500;;Marienwerder;4;28.07.1861;1861;79;41;6;32;38;30;9;40;0;0;0
+;Strassburg;Strassburg;5000;;Marienwerder;4;13.04.1862;1862;53;16;14;23;37;29;10;14;0;0;0
+;Thorn;Thorn;14000;;Marienwerder;4;24.05.1860;1860;109;10;58;41;99;16;8;35;0;50;0
+;Bromberg;Bromberg;23000;;Bromberg;5;04.08.1859;1859;136;32;0;104;104;42;12;64;0;18;0
+;Chodziehen;Chodziehen;3500;;Bromberg;5;1861;1861;18;0;6;12;18;11;6;4;0;-3;0
+;Scheidemühl;Scheidemuehl;7000;;Bromberg;5;11.09.1862;1862;42;;5;37;42;8;15;20;0;-1;0
+;Filehne;Filehne;400;;Bromberg;5;15.05.1864;1864;43;22;4;17;21;12;15;11;0;5;0
+;Gnesen;Gnesen;8000;;Bromberg;5;27.08.1862;1862;82;36;3;43;6;23;18;31;0;10;-40
+;Hohensalza;Hohensalza;6700;;Bromberg;5;31.08.1861;1861;66;;;66;66;8;20;51;0;-13;0
+;Bentschen;Bentschen;1800;;Posen;6;30.08.1863;1863;38;4;;34;34;17;8;13;0;0;0
+;Birnbaum;Birnbaum;5000;;Posen;6;03.06.1864;1864;70;36;13;21;34;21;9;40;0;0;0
+;Fraustadt;Fraustadt;6600;;Posen;6;02.05.1861;1861;34;3;;31;31;16;6;12;0;0;0
+;Gostyn;Gostyn;2850;;Posen;6;31.08.1864;1864;31;10;10;11;21;14;3;14;0;0;0
+;Grätz;Graetz;4000;;Posen;6;09.07.1862;1862;35;;7;28;35;9;6;21;0;-1;0
+;Kempem;Kempem;5900;;Posen;6;16.08.1861;1861;106;5;6;46;52;19;10;77;49;0;0
+;Kosten;Kosten;3470;;Posen;6;28.06.1862;1862;58;32;4;22;26;19;22;17;0;0;0
+;Krotoschin;Krotoschin;8500;;Posen;6;31.08.1863;1863;37;9;4;25;29;10;5;22;-1;0;0
+;Meseritz;Meseritz;5000;;Posen;6;06.04.1862;1862;30;30;;;;;;30;0;0;0
+;Oberwitzko;Oberwitzko;1750;;Posen;6;01.07.1864;1864;26;;6;20;26;10;5;11;0;0;0
+;Pleschen;Pleschen;6000;;Posen;6;15.05.1862;1862;61;;2;59;61;15;22;24;0;0;0
+;Posen;Posen;51232;;Posen;6;28.11.1860;1860;245;142;15;88;103;57;30;158;0;0;0
+;Rackwitz;Rackwitz;2050;;Posen;6;02.08.1863;1863;28;6;6;16;22;17;4;7;0;0;0
+;Rawicz;Rawicz;10000;;Posen;6;21.02.1862;1862;78;29;1;48;49;23;23;32;0;0;0
+;Rogasen;Rogasen;4550;;Posen;6;21.06.1860;1860;25;7;;18;18;4;7;14;0;0;0
+;Schmiegel;Schmiegel;3100;;Posen;6;12.07.1862;1862;70;30;15;25;40;47;4;19;0;0;0
+;Schroda;Schroda;1950;;Posen;6;21.08.1862;1862;29;14;3;12;15;2;20;7;0;0;0
+;Schwerin;Schwerin;5600;;Posen;6;28.09.1861;1861;84;;18;66;84;2;11;51;0;20;0
+;Unruhstadt;Unruhstadt;2000;;Posen;6;24.08.1863;1863;42;3;4;35;39;24;3;15;0;0;0
+;Wollstein;Wollstein;2950;;Posen;6;01.07.1863;1863;64;20;5;39;44;19;10;35;0;0;0
+;Zirke;Zirke;1700;;Posen;6;01.10.1864;1864;45;20;11;14;25;29;3;13;0;0;0
+;Beuthen;Beuthen;4004;;Liegnitz;7;24.01.1862;1862;44;18;1;25;26;16;11;17;0;0;0
+;Bolkenhain;Bolkenhain;2347;;Liegnitz;7;16.06.1861;1861;60;40;0;20;20;44;6;10;0;0;0
+;Bunzlau;Bunzlau;7461;;Liegnitz;7;01.10.1864;1864;36;0;0;36;36;36;0;0;0;0;0
+;Freiwaldau;Freiwaldau;1600;;Liegnitz;7;25.02.1864;1864;30;10;6;14;20;30;0;0;0;0;0
+;Glogau;Glogau;17533;;Liegnitz;7;21.02.1861;1861;121;56;20;45;65;39;16;66;0;0;0
+;Goldberg;Goldberg;6688;;Liegnitz;7;10.05.1862;1862;163;102;20;41;61;105;28;30;0;0;0
+;Görlitz;Goerlitz;27983;;Liegnitz;7;01.11.1847;1847;320;140;42;138;180;155;44;121;0;0;0
+;Greiffenberg;Greiffenberg;2519;;Liegnitz;7;24.06.1862;1862;40;0;3;37;40;14;5;21;0;0;0
+;Greiffenberg;Greiffenberg;2519;;Liegnitz;7;29.05.1864;1864;37;3;0;34;34;35;2;0;0;0;0
+;Grunau;Grunau;1800;;Liegnitz;7;27.08.1862;1862;14;6;1;7;8;14;0;0;0;0;0
+;Grünberg;Gruenberg;10563;;Liegnitz;7;02.08.1861;1861;164;56;14;94;108;70;19;75;0;0;0
+;Haynau;Haynau;4376;;Liegnitz;7;01.09.1861;1861;92;0;10;82;92;46;11;35;0;0;0
+;Hirschberg;Hirschberg;8939;;Liegnitz;7;06.04.1861;1861;170;83;4;83;87;50;39;81;0;0;0
+;Hoyerswerda;Hoyerswerda;2590;;Liegnitz;7;07.09.1861;1861;212;142;42;28;70;122;33;57;0;0;0
+;Jauer;Jauer;8679;;Liegnitz;7;10.05.1861;1861;116;32;18;66;84;82;13;21;0;0;0
+;Landeshut;Landeshut;4670;;Liegnitz;7;16.09.1861;1861;140;68;1;71;72;34;35;71;0;0;0
+;Langenöls;Langenoels;4000;;Liegnitz;7;07.08.1862;1862;48;12;5;31;36;42;6;0;0;0;0
+;Lauban;Lauban;6656;;Liegnitz;7;18.10.1860;1860;152;48;52;52;104;91;23;38;0;0;0
+;Liebau;Liebau;2823;;Liegnitz;7;01.05.1864;1864;61;27;7;27;34;35;6;20;0;0;0
+;Liegnitz;Liegnitz;18662;;Liegnitz;7;06.10.1852;1852;255;179;40;36;76;99;32;124;0;0;0
+;Löwenberg;Loewenberg;5465;;Liegnitz;7;18.06.1862;1862;94;40;28;26;54;65;20;9;0;0;0
+;Lüben;Lueben;4549;;Liegnitz;7;31.03.1862;1862;42;16;3;23;26;4;28;10;0;0;0
+;Marklissa;Marklissa;2014;;Liegnitz;7;01.07.1863;1863;44;12;4;28;32;42;0;2;0;0;0
+;Muskau;Muskau;2579;;Liegnitz;7;01.07.1862;1862;88;17;24;47;71;71;7;10;0;0;0
+;Naumburg;Naumburg;1815;;Liegnitz;7;07.06.1863;1863;74;20;6;48;54;68;3;3;0;0;0
+;Neusalz;Neusalz;4504;;Liegnitz;7;08.02.1862;1862;32;4;0;28;28;13;6;13;0;0;0
+;Parchwitz;Parchwitz;1422;;Liegnitz;7;16.05.1862;1862;51;30;5;16;21;45;1;5;0;0;0
+;Rothenburg;Rothenburg;1586;;Liegnitz;7;24.06.1864;1864;69;23;29;17;46;48;12;9;0;0;0
+;Ruhland;Ruhland;1581;;Liegnitz;7;01.04.1864;1864;45;30;9;6;15;32;7;6;0;0;0
+;Sagan;Sagan;9561;;Liegnitz;7;25.05.1861;1861;196;78;43;75;118;128;11;57;0;0;0
+;Schmiedeberg;Schmiedeberg;3494;;Liegnitz;7;26.06.1862;1862;49;20;1;28;29;16;7;26;0;0;0
+;Schönau;Schoenau;1348;;Liegnitz;7;03.06.1862;1862;67;36;5;26;31;45;12;10;0;0;0
+;Schönberg;Schoenberg;1448;;Liegnitz;7;12.11.1861;1861;53;24;6;23;29;44;2;7;0;0;0
+;Seidenberg;Seidenberg;1536;;Liegnitz;7;29.06.1861;1861;74;26;21;27;48;61;6;7;0;0;0
+;Sprottau;Sprottau;5308;;Liegnitz;7;05.07.1861;1861;138;68;0;70;70;70;22;46;0;0;0
+;Tiefenfurt;Tiefenfurt;1000;;Liegnitz;7;06.06.1861;1861;32;12;5;15;20;12;7;13;0;0;0
+;Warmbrunn;Warmbrunn;3000;;Liegnitz;7;01.08.1861;1861;65;16;0;49;49;35;13;17;0;0;0
+;Bernstadt;Bernstadt;3727;;Breslau;8;28.06.1862;1862;60;40;0;20;20;42;4;14;0;0;0
+;Breslau;Breslau;145589;;Breslau;8;11.01.1859;1859;410;180;74;156;230;33;140;237;0;0;0
+;Breslau;Breslau;145589;;Breslau;8;19.09.1861;1861;330;150;0;180;180;40;59;231;0;0;0
+;Brieg;Brieg;12970;;Breslau;8;18.07.1859;1859;106;27;32;47;79;32;23;51;0;0;0
+;Ernsdorf;Ernsdorf;4500;;Breslau;8;16.08.1862;1862;69;30;2;37;39;64;2;3;0;0;0
+;Festenberg;Festenberg;2210;;Breslau;8;21.06.1862;1862;50;16;4;30;34;23;7;11;0;9;0
+;Frankenstein;Frankenstein;6567;;Breslau;8;01.05.1862;1862;39;11;0;28;28;19;5;15;0;0;0
+;Freiburg;Freiburg;5847;;Breslau;8;02.08.1862;1862;62;32;0;30;30;36;3;23;0;0;0
+;Glatz;Glatz;11415;;Breslau;8;08.07.1862;1862;53;26;1;26;27;19;4;30;0;0;0
+;Gottesberg;Gottesberg;3305;;Breslau;8;24.05.1862;1862;64;24;6;34;40;54;3;7;0;0;0
+;Guhrau;Guhrau;4100;;Breslau;8;16.04.1864;1864;93;55;11;27;38;37;15;41;0;0;0
+;Habelschwerdt;Habelschwerdt;3849;;Breslau;8;03.04.1862;1862;71;27;9;35;44;31;14;26;0;0;0
+;Langenbielau;Langenbielau;15000;;Breslau;8;10.04.1861;1861;40;26;4;10;14;15;5;20;0;0;0
+;Münsterberg;Muensterberg;5222;;Breslau;8;26.07.1862;1862;45;12;14;19;33;26;1;18;0;0;0
+;Neumarkt;Neumarkt;5097;;Breslau;8;09.10.1861;1861;64;31;4;29;33;56;3;5;0;0;0
+;Neurode;Neurode;5886;;Breslau;8;24.06.1862;1862;28;11;2;15;17;8;10;10;0;0;0
+;Nimptsch;Nimptsch;2105;;Breslau;8;07.09.1861;1861;50;30;0;20;20;25;6;19;0;0;0
+;Oels;Oels;7499;;Breslau;8;12.07.1862;1862;33;12;0;21;21;8;9;16;0;0;0
+;Ohlau;Ohlau;6840;;Breslau;8;22.07.1861;1861;56;32;1;23;24;18;5;33;0;0;0
+;Reichenbach;Reichenbach;6356;;Breslau;8;01.04.1861;1861;63;40;9;14;23;21;5;37;0;0;0
+;Schweidnitz;Schweidnitz;15281;;Breslau;8;27.06.1860;1860;61;32;4;25;29;23;14;24;0;0;0
+;Steinau an der Oder;Steinau an der Oder;3241;;Breslau;8;14.09.1861;1861;30;5;8;17;25;14;4;12;0;0;0
+;Strehlen;Strehlen;5424;;Breslau;8;01.05.1861;1861;36;17;0;19;19;21;1;14;0;0;0
+;Striegau;Striegau;7608;;Breslau;8;17.07.1861;1861;59;0;3;56;59;24;16;19;0;0;0
+;Trachenberg;Trachenberg;2968;;Breslau;8;15.08.1863;1863;62;30;4;28;32;33;4;25;0;0;0
+;Trebnitz;Trebnitz;4424;;Breslau;8;20.02.1862;1862;56;41;0;15;15;18;22;16;0;0;0
+;Waldenburg;Waldenburg;5554;;Breslau;8;16.06.1860;1860;150;110;6;34;40;77;21;52;0;0;0
+;Wartenberg;Wartenberg;2434;;Breslau;8;09.07.1862;1862;31;16;9;6;15;9;4;18;0;0;0
+;Wohlau;Wohlau;2923;;Breslau;8;29.04.1862;1862;17;5;0;12;12;4;9;4;0;0;0
+;Wüstegiersdorf;Wuestegiersdorf;4000;;Breslau;8;30.06.1860;1860;50;25;8;17;25;20;10;20;0;0;0
+;Wüstewaltersdorf;Wuestewaltersdorf;2000;;Breslau;8;25.07.1861;1861;42;28;0;14;14;19;7;16;0;0;0
+;Beuthen;Beuthen;12843;;Oppeln;9;19.06.1861;1861;119;25;3;91;94;23;20;76;0;0;0
+;Constadt;Constadt;1926;;Oppeln;9;24.06.1862;1862;24;0;0;24;24;9;0;15;0;0;0
+;Creuzburg;Creuzburg;4365;;Oppeln;9;06.09.1861;1861;39;21;1;17;18;4;10;25;0;0;0
+;Gleiwitz;Gleiwitz;11294;;Oppeln;9;19.12.1861;1861;113;33;3;77;80;25;25;63;0;0;0
+;Grottkau;Grottkau;3916;;Oppeln;9;13.06.1861;1861;82;37;30;15;45;56;12;14;0;0;0
+;Kattowitz;Kattowitz;4772;;Oppeln;9;12.05.1860;1860;107;48;0;59;59;22;19;66;0;0;0
+;Königshütte;Koenigshuette;400;;Oppeln;9;07.07.1862;1862;46;24;0;22;22;17;9;20;0;0;0
+;Laurahütte;Laurahuette;6300;;Oppeln;9;01.03.1862;1862;101;65;4;32;36;23;53;25;0;0;0
+;Leobschütz;Leobschuetz;9365;;Oppeln;9;07.10.1862;1862;36;10;7;19;26;10;6;20;0;0;0
+;Lipine;Lipine;4000;;Oppeln;9;05.03.1862;1862;38;26;0;12;12;7;3;28;0;0;0
+;Myslowitz;Myslowitz;5656;;Oppeln;9;28.03.1861;1861;47;29;4;14;18;7;15;25;0;0;0
+;Neisse;Neisse;13854;;Oppeln;9;23.06.1860;1860;133;42;69;22;91;69;7;57;0;0;0
+;Neustadt ;Neustadt ;8641;;Oppeln;9;01.10.1861;1861;47;0;22;25;47;18;19;10;0;0;0
+;Nicolai;Nicolai;4508;;Oppeln;9;19.10.1862;1862;25;10;0;15;15;13;6;6;0;0;0
+;Oppeln;Oppeln;10378;;Oppeln;9;02.11.1861;1861;4;1;0;3;3;0;4;0;0;0;0
+;Pitschen;Pitschen;2214;;Oppeln;9;05.04.1862;1862;53;24;0;29;29;41;6;6;0;0;0
+;Ratibor;Ratibor;12526;;Oppeln;9;18.10.1861;1861;41;0;0;41;41;14;13;14;0;0;0
+;Sohrau;Sohrau;3754;;Oppeln;9;30.11.1862;1862;23;18;0;5;5;5;5;13;0;0;0
+;Tarnowitz;Tarnowitz;5924;;Oppeln;9;09.07.1862;1862;96;30;4;62;66;39;18;39;0;0;0
+;Zaberze;Zaberze;6000;;Oppeln;9;27.08.1862;1862;43;29;2;12;14;8;17;18;0;0;0
+;Ziegenhals;Ziegenhals;4013;;Oppeln;9;01.10.1863;1863;42;22;3;17;20;15;8;19;0;0;0
+;Alt-Damm;Alt-Damm;3935;;Stettin;10;18.09.1864;1864;32;0;18;14;32;29;0;3;0;0;0
+;Alt-Damm;Alt-Damm;3935;;Stettin;10;05.09.1863;1863;51;3;0;48;48;32;8;11;0;0;0
+;Anclam;Anclam;12100;;Stettin;10;01.09.1861;1861;68;48;2;18;20;13;15;40;0;0;0
+;Bahn;Bahn;2657;;Stettin;10;01.08.1862;1862;118;59;4;55;59;76;17;25;0;0;0
+;Bredow;Bredow;3052;;Stettin;10;15.08.1861;1861;34;6;3;25;28;18;10;6;0;0;0
+;Cammin;Cammin;5184;;Stettin;10;25.08.1861;1861;56;38;7;11;18;22;7;27;0;0;0
+;Fiddichow;Fiddichow;3011;;Stettin;10;09.04.1860;1860;67;27;15;25;40;44;6;17;0;0;0
+;Garz an der Oder;Garz an der Oder;4695;;Stettin;10;03.08.1862;1862;62;12;6;44;50;50;8;4;0;0;0
+;Gollnow;Gollnow;7337;;Stettin;10;15.06.1861;1861;65;25;14;26;40;29;10;26;0;0;0
+;Grabow an der Oder;Grabow an der Oder;6200;;Stettin;10;21.09.1861;1861;34;9;6;19;25;28;5;1;0;0;0
+;Greifenberg;Greifenberg;5572;;Stettin;10;31.07.1862;1862;32;8;5;19;24;25;1;6;0;0;0
+;Greifenhagen;Greifenhagen;6501;;Stettin;10;02.07.1862;1862;124;72;24;28;52;80;5;39;0;0;0
+;Gülzow;Guelzow;1400;;Stettin;10;14.09.1862;1862;78;34;14;30;44;61;2;15;0;0;0
+;Jarmen;Jarmen;1699;;Stettin;10;06.07.1862;1862;61;24;25;12;37;47;3;11;0;0;0
+;Jasenitz;Jasenitz;2000;;Stettin;10;23.09.1862;1862;33;17;9;7;16;22;3;8;0;0;0
+;Labes;Labes;4759;;Stettin;10;01.09.1861;1861;45;20;15;10;25;31;2;12;0;0;0
+;Massow;Massow;2802;;Stettin;10;14.06.1862;1862;36;9;7;20;27;20;3;13;0;0;0
+;Naugard;Naugard;4699;;Stettin;10;20.11.1863;1863;133;62;22;49;71;76;24;33;0;0;0
+;Neutorney, Vorstadt von Stettin;Neutorney, Vorstadt von Stettin;;;Stettin;10;16.08.1862;1862;58;0;12;46;58;57;0;1;0;0;0
+;Neutorney, Vorstadt von Stettin;Neutorney, Vorstadt von Stettin;;;Stettin;10;05.07.1861;1861;51;2;1;48;49;38;3;10;0;0;0
+;Pasewalk;Pasewalk;7141;;Stettin;10;08.09.1861;1861;55;30;1;24;25;23;6;26;0;0;0
+;Poelitz;Poelitz;3938;;Stettin;10;23.06.1862;1862;98;20;15;63;78;70;9;19;0;0;0
+;Pyritz;Pyritz;6861;;Stettin;10;11.07.1861;1861;42;20;10;12;22;25;6;11;0;0;0
+;Regenwalde;Regenwalde;3463;;Stettin;10;05.08.1863;1863;44;11;13;20;33;24;4;16;0;0;0
+;Stargard;Stargard;15340;;Stettin;10;07.07.1860;1860;73;32;0;41;41;36;12;25;0;0;0
+;Stettin;Stettin;63225;;Stettin;10;06.02.1847;1847;506;287;65;154;219;77;31;398;0;0;0
+;Stettin;Stettin;63225;;Stettin;10;18.10.1859;1859;120;0;0;120;120;59;16;45;0;0;0
+;Stettin;Stettin;63225;;Stettin;10;01.12.1859;1859;40;0;12;28;40;29;0;11;0;0;0
+;Swinemünde;Swinemuende;6452;;Stettin;10;31.07.1861;1861;81;51;2;28;30;26;17;38;0;0;0
+;Treptow an der Rega;Treptow an der Rega;6878;;Stettin;10;04.06.1862;1862;84;54;11;19;30;53;8;23;0;0;0
+;Treptow an der Tollense;Treptow an der Tollense;4188;;Stettin;10;01.09.1862;1862;42;20;5;17;22;17;15;10;0;0;0
+;Ueckermünde;Ueckermuende;4403;;Stettin;10;02.09.1861;1861;39;18;5;16;21;27;4;8;0;0;0
+;Wollin;Wollin;5180;;Stettin;10;19.09.1862;1862;76;16;10;50;60;43;19;14;0;0;0
+;Belgard;Belgard;5460;;Coeslin;11;09.06.1861;1861;82;55;6;21;27;33;18;31;0;0;0
+;Bublitz;Bublitz;3755;;Coeslin;11;07.04.1863;1863;53;28;14;11;25;30;2;21;0;0;0
+;Callies;Callies;3204;;Coeslin;11;20.06.1864;1864;52;11;4;37;41;38;8;6;0;0;0
+;Coeslin;Coeslin;12089;;Coeslin;11;01.08.1863;1863;81;46;16;19;35;29;10;42;0;0;0
+;Colberg;Colberg;11760;;Coeslin;11;06.08.1861;1861;116;88;12;16;28;28;34;54;0;0;0
+;Dramburg;Dramburg;5032;;Coeslin;11;24.09.1861;1861;79;30;10;39;49;33;18;28;0;0;0
+;Lauenburg in Pommern;Lauenburg in Pommern;5987;;Coeslin;11;06.07.1862;1862;176;126;4;46;50;91;21;64;0;0;0
+;Neustettin;Neustettin;6106;;Coeslin;11;23.08.1862;1862;75;60;6;9;15;24;18;33;0;0;0
+;Pollnow;Pollnow;2167;;Coeslin;11;10.09.1862;1862;63;43;0;20;20;29;18;16;0;0;0
+;Polzin;Polzin;4373;;Coeslin;11;05.06.1862;1862;47;12;6;29;35;27;4;16;0;0;0
+;Rügenwalde;Ruegenwalde;5200;;Coeslin;11;29.06.1862;1862;55;40;10;5;15;32;10;13;0;0;0
+;Rummelsburg;Rummelsburg;5534;;Coeslin;11;01.09.1861;1861;30;12;10;8;18;27;1;2;0;0;0
+;Schievelbein;Schievelbein;5402;;Coeslin;11;07.09.1862;1862;87;49;10;28;38;39;12;36;0;0;0
+;Stolp;Stolp;13392;;Coeslin;11;15.09.1861;1861;107;86;9;12;21;29;4;74;0;0;0
+;Barth;Barth;5757;;Stralsund;12;09.04.1862;1862;65;50;10;5;15;12;0;53;0;0;0
+;Bergen auf Rügen;Bergen auf Ruegen;3656;;Stralsund;12;31.07.1862;1862;102;61;14;27;41;65;9;28;0;0;0
+;Damgarten;Damgarten;2011;;Stralsund;12;01.08.1864;1864;65;24;5;36;41;32;13;20;0;0;0
+;Eldena;Eldena;500;;Stralsund;12;24.06.1861;1861;20;5;0;15;15;0;20;0;0;0;0
+;Franzburg;Franzburg;1520;;Stralsund;12;18.09.1861;1861;42;28;5;9;14;13;14;15;0;0;0
+;Garz auf Rügen;Garz auf Ruegen;2123;;Stralsund;12;11.07.1863;1863;45;25;2;18;20;35;6;4;0;0;0
+;Greifswald;Greifswald;15714;;Stralsund;12;19.06.1860;1860;320;255;6;59;65;118;86;116;0;0;0
+;Grimmen;Grimmen;3098;;Stralsund;12;05.11.1860;1860;88;49;3;36;39;45;11;32;0;0;0
+;Loitz;Loitz;3792;;Stralsund;12;09.02.1862;1862;64;43;4;17;21;51;5;8;0;0;0
+;Putbus auf Rügen;Putbus auf Ruegen;1500;;Stralsund;12;1863;1863;40;25;11;4;15;36;2;2;0;0;0
+;Sagard;Sagard;1100;;Stralsund;12;17.06.1862;1862;63;43;2;18;20;47;5;11;0;0;0
+;Stralsund;Stralsund;24063;;Stralsund;12;17.08.1860;1860;179;80;60;39;99;81;25;73;0;0;0
+;Triebsees;Triebsees;3631;;Stralsund;12;11.08.1862;1862;87;63;7;17;24;61;7;19;0;0;0
+;Wolgast;Wolgast;6412;;Stralsund;12;07.09.1861;1861;110;84;11;15;26;39;10;61;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;278;0;168;110;278;152;84;42;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;101;0;61;40;101;79;12;10;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;28.05.1858;1858;50;0;21;29;50;23;13;14;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;01.10.1860;1860;103;7;36;60;96;6;25;72;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;20.09.1861;1861;44;0;0;44;44;32;8;4;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;15.07.1861;1861;39;0;9;30;39;4;31;4;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;21.09.1861;1861;66;0;0;66;66;0;66;0;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;416;0;0;0;0;0;0;0;416;416;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;158;0;158;0;158;127;21;10;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;18.10.1859;1859;94;0;0;0;0;0;0;0;94;94;0
+;Berlin;Berlin;524945;;Berlin;13;27.10.1861;1861;36;0;36;0;36;28;0;0;0;8;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;68;0;0;0;0;0;0;0;68;68;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;326;0;206;0;206;206;0;0;120;120;0
+;Berlin;Berlin;524945;;Berlin;13;16.05.1863;1863;40;0;0;0;0;0;0;0;40;40;0
+;Berlin;Berlin;524945;;Berlin;13;15.04.1849;1849;126;0;43;83;126;15;49;62;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;19.03.1850;1850;122;0;53;69;122;81;16;25;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;17.11.1859;1859;104;0;30;74;104;68;13;23;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;01.04.1860;1860;31;12;0;19;19;1;6;24;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;03.07.1860;1860;35;0;0;0;35;0;35;0;35;0;35
+;Berlin;Berlin;524945;;Berlin;13;17.07.1860;1860;115;0;23;92;115;1;114;0;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;15.02.1861;1861;27;0;0;27;27;5;22;0;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;11.05.1861;1861;93;44;10;39;49;50;16;27;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;11.08.1861;1861;88;0;0;88;88;21;32;35;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;24.08.1861;1861;74;2;25;47;72;50;10;14;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;01.10.1861;1861;54;0;8;50;58;4;7;47;-4;-4;0
+;Berlin;Berlin;524945;;Berlin;13;01.10.1861;1861;15;0;5;10;15;13;1;1;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;01.10.1861;1861;101;0;37;64;101;97;0;4;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;22.04.1862;1862;57;20;17;20;37;49;4;4;;;
+;Berlin;Berlin;524945;;Berlin;13;01.06.1862;1862;89;4;67;18;85;42;33;9;0;5;0
+;Berlin;Berlin;524945;;Berlin;13;22.08.1862;1862;41;4;30;7;37;40;0;1;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;18.10.1862;1862;24;0;7;17;24;14;5;5;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;16.09.1863;1863;44;9;14;21;35;36;4;4;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;na;na;148;1;79;20;99;33;12;6;48;97;0
+;Berlin;Berlin;524945;;Berlin;13;na;na;34;0;0;0;0;0;0;0;34;34;0
+;Berlin;Berlin;524945;;Berlin;13;na;na;22;0;0;0;0;0;0;0;22;22;0
+;Berlin;Berlin;524945;;Berlin;13;20.09.1860;1860;38;0;0;38;38;35;0;3;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;06.12.1861;1861;60;0;45;15;60;28;0;32;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;21.02.1862;1862;102;0;0;102;102;12;6;84;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;02.06.1862;1862;25;4;1;20;21;1;1;23;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;27.11.1863;1863;64;0;20;44;64;17;6;41;0;0;0
+;Berlin;Berlin;524945;;Berlin;13;26.04.1864;1864;23;0;4;19;23;7;5;11;0;0;0
+;Alt-Landsberg;Alt-Landsberg;1980;;Potsdam;14;24.08.1860;1860;20;5;1;14;15;11;2;7;0;0;0
+;Angermünde;Angermuende;5673;;Potsdam;14;07.09.1861;1861;26;3;7;16;23;18;7;1;0;0;0
+;Baruth;Baruth;1800;;Potsdam;14;28.05.1863;1863;51;26;6;19;25;28;9;14;0;0;0
+;Beelitz;Beelitz;2797;;Potsdam;14;18.10.1861;1861;40;18;10;12;22;25;10;5;0;0;0
+;Belzig;Belzig;2621;;Potsdam;14;02.07.1862;1862;42;9;8;25;33;30;3;9;0;0;0
+;Bernau;Bernau;5031;;Potsdam;14;21.06.1861;1861;40;0;25;15;40;40;0;0;0;0;0
+;Bernau;Bernau;5031;;Potsdam;14;07.06.1862;1862;26;0;0;26;26;19;4;3;0;0;0
+;Brandenburg;Brandenburg;21547;;Potsdam;14;14.08.1861;1861;130;70;30;30;60;24;21;85;0;0;0
+;Brandenburg;Brandenburg;21547;;Potsdam;14;01.09.1864;1864;94;8;45;41;86;93;1;0;0;0;0
+;Charlottenburg;Charlottenburg;12027;;Potsdam;14;21.06.1858;1858;114;52;10;52;62;42;22;50;0;0;0
+;Cöpnick;Coepnick;3608;;Potsdam;14;01.10.1864;1864;46;0;20;26;46;44;0;2;0;0;0
+;Cremmen;Cremmen;1879;;Potsdam;14;01.06.1862;1862;56;0;10;46;56;55;0;1;0;0;0
+;Dahme;Dahme;4502;;Potsdam;14;16.07.1862;1862;85;10;28;47;75;71;4;10;0;0;0
+;Dahme;Dahme;4502;;Potsdam;14;04.08.1862;1862;40;0;7;33;40;32;2;6;0;0;0
+;Fehrberlin;Fehrberlin;2124;;Potsdam;14;26.08.1861;1861;192;104;40;48;88;142;10;40;0;0;0
+;Freyenstein;Freyenstein;1587;;Potsdam;14;19.10.1862;1862;69;25;15;29;44;58;4;7;0;0;0
+;Freyenwalde;Freyenwalde;4543;;Potsdam;14;24.09.1859;1859;22;2;0;20;20;10;6;6;0;0;0
+;Friesack;Friesack;3256;;Potsdam;14;19.05.1862;1862;52;35;16;1;17;16;0;0;0;36;0
+;Havelberg;Havelberg;3153;;Potsdam;14;20.03.1863;1863;111;46;15;50;65;66;13;32;0;0;0
+;Jüterbogk;Jueterbogk;6169;;Potsdam;14;18.06.1862;1862;19;0;11;8;19;9;0;10;0;0;0
+;Kyritz;Kyritz;4077;;Potsdam;14;04.09.1862;1862;96;50;19;27;46;40;14;42;0;0;0
+;Lenzen;Lenzen;2979;;Potsdam;14;10.04.1863;1863;102;61;20;21;41;81;5;16;0;0;0
+;Liebenwalde;Liebenwalde;2561;;Potsdam;14;10.05.1862;1862;86;15;15;56;71;66;9;11;0;0;0
+;Luckenwalde;Luckenwalde;10168;;Potsdam;14;10.11.1862;1862;105;23;25;57;82;74;10;21;0;0;0
+;Lychen;Lychen;2401;;Potsdam;14;11.05.1862;1862;50;27;13;10;23;22;5;23;0;0;0
+;Mayenburg;Mayenburg;1748;;Potsdam;14;18.05.1864;1864;84;40;30;14;44;69;8;7;0;0;0
+;Neu-Lewin;Neu-Lewin;1188;;Potsdam;14;05.12.1861;1861;23;0;3;20;23;15;3;5;0;0;0
+;Neuruppin;Neuruppin;9838;;Potsdam;14;18.10.1861;1861;59;25;2;32;34;38;12;9;0;0;0
+;Neustadt an der Dosse;Neustadt an der Dosse;1050;;Potsdam;14;13.08.1863;1863;28;4;9;15;24;25;1;2;0;0;0
+;Neustadt-Eberswalde;Neustadt-Eberswalde;6636;;Potsdam;14;28.03.1863;1863;59;30;0;29;29;19;21;19;0;0;0
+;Nowawetz;Nowawetz;3934;;Potsdam;14;17.03.1862;1862;62;7;33;22;55;61;1;0;0;0;0
+;Oderberg;Oderberg;2831;;Potsdam;14;27.06.1861;1861;52;23;7;22;29;39;5;8;0;0;0
+;Oranienburg;Oranienburg;3692;;Potsdam;14;01.06.1861;1861;102;42;33;27;60;63;20;19;0;0;0
+;Perleberg;Perleberg;6623;;Potsdam;14;20.06.1862;1862;124;55;4;65;69;72;21;43;0;-12;0
+;Potsdam;Potsdam;34869;;Potsdam;14;23.05.1860;1860;151;50;60;41;101;125;11;15;0;0;0
+;Prenzlau;Prenzlau;13213;;Potsdam;14;13.12.1860;1860;120;5;20;95;115;49;27;44;0;0;0
+;Pritzwalk;Pritzwalk;5491;;Potsdam;14;01.11.1861;1861;134;74;15;45;60;49;28;57;0;0;0
+;Putlitz;Putlitz;1830;;Potsdam;14;18.06.1863;1863;95;69;8;18;26;65;20;10;0;0;0
+;Rathenow;Rathenow;6638;;Potsdam;14;13.08.1861;1861;155;113;25;17;42;109;21;25;0;0;0
+;Schwedt an der Oder;Schwedt an der Oder;7692;;Potsdam;14;29.04.1858;1858;62;29;7;26;33;29;11;22;0;0;0
+;Spandau;Spandau;11639;;Potsdam;14;29.08.1860;1860;82;26;13;43;56;46;3;33;0;0;0
+;Straßburg;Strassburg;4743;;Potsdam;14;07.05.1863;1863;53;14;5;34;39;31;3;18;0;1;0
+;Straußberg;Straussberg;4506;;Potsdam;14;15.05.1862;1862;40;12;8;20;28;33;3;4;0;0;0
+;Templin;Templin;4142;;Potsdam;14;12.05.1862;1862;42;30;8;4;12;4;17;21;0;0;0
+;Treuenbrietzen;Treuenbrietzen;4970;;Potsdam;14;23.05.1861;1861;39;14;17;8;25;19;13;7;0;0;0
+;Wendisch-Buchholz;Wendisch-Buchholz;1005;;Potsdam;14;23.05.1861;1861;45;22;10;13;23;31;2;12;0;0;0
+;Werder;Werder;3147;;Potsdam;14;19.08.1860;1860;19;4;0;15;15;12;7;0;0;0;0
+;Werneuchen;Werneuchen;1372;;Potsdam;14;01.07.1864;1864;20;0;12;8;20;16;1;3;0;0;0
+;Wilsnack;Wilsnack;2280;;Potsdam;14;26.07.1863;1863;60;27;0;0;33;47;1;12;33;0;33
+;Wittenberge;Wittenberge;5754;;Potsdam;14;09.04.1863;1863;160;80;44;36;80;77;19;64;0;0;0
+;Wittstock;Wittstock;7239;;Potsdam;14;16.07.1861;1861;111;46;0;0;65;0;0;0;65;111;65
+;Wriezen;Wriezen;6664;;Potsdam;14;10.06.1859;1859;66;27;3;36;39;49;6;11;0;0;0
+;Wriezen;Wriezen;6664;;Potsdam;14;05.11.1862;1862;65;40;6;19;25;11;16;38;0;0;0
+;Zehdenick;Zehdenick;3273;;Potsdam;14;01.10.1861;1861;82;35;21;26;47;43;15;24;0;0;0
+;Arnswalde;Arnswalde;6237;;Frankfurt Oder;15;22.08.1861;1861;95;48;0;47;47;49;13;33;0;0;0
+;Calau;Calau;2427;;Frankfurt Oder;15;18.10.1862;1862;60;27;10;23;33;55;2;3;0;0;0
+;Cottbus;Cottbus;10523;;Frankfurt Oder;15;15.05.1861;1861;375;186;110;79;189;287;15;73;0;0;0
+;Crossen;Crossen;6489;;Frankfurt Oder;15;12.08.1860;1860;71;50;10;11;21;41;16;14;0;0;0
+;Cüstrin;Cuestrin;8276;;Frankfurt Oder;15;18.10.1858;1858;80;51;9;20;29;39;13;28;0;0;0
+;Cüstrin lange Vorstadt;Cuestrin lange Vorstadt;600;;Frankfurt Oder;15;14.06.1862;1862;28;0;2;26;28;19;3;6;0;0;0
+;Driesen;Driesen;4337;;Frankfurt Oder;15;05.10.1861;1861;152;101;10;41;51;97;32;23;0;0;0
+;Drossen;Drossen;5211;;Frankfurt Oder;15;01.12.1861;1861;29;17;0;12;12;15;7;7;0;0;0
+;Finsterwalde;Finsterwalde;6660;;Frankfurt Oder;15;12.08.1862;1862;80;36;0;0;44;48;14;18;0;0;44
+;Forst;Forst;6707;;Frankfurt Oder;15;25.08.1861;1861;344;168;58;118;176;321;11;12;0;0;0
+;Frankfurt Oder;Frankfurt Oder;34253;;Frankfurt Oder;15;26.09.1860;1860;267;117;40;110;150;98;78;91;0;0;0
+;Friedeberg;Friedeberg;5535;;Frankfurt Oder;15;01.05.1862;1862;102;63;13;26;39;41;31;30;0;0;0
+;Fürstenwalde;Fuerstenwalde;6245;;Frankfurt Oder;15;28.05.1861;1861;67;37;11;19;30;36;10;21;0;0;0
+;Guben;Guben;15235;;Frankfurt Oder;15;23.03.1861;1861;220;131;21;68;89;141;16;63;0;0;0
+;Königsberg;Koenigsberg;5535;;Frankfurt Oder;15;19.05.1862;1862;76;32;7;37;44;22;13;41;0;0;0
+;Landsberg;Landsberg;15747;;Frankfurt Oder;15;14.03.1861;1861;147;69;22;56;78;42;25;80;0;0;0
+;Lippehne;Lippehne;3193;;Frankfurt Oder;15;19.07.1862;1862;17;3;0;14;14;15;1;3;0;-2;0
+;Lübben;Luebben;4818;;Frankfurt Oder;15;01.05.1861;1861;102;39;8;55;63;74;6;22;0;0;0
+;Lübbenau;Luebbenau;3145;;Frankfurt Oder;15;17.05.1862;1862;64;21;6;37;43;53;3;8;0;0;0
+;Luckau;Luckau;4853;;Frankfurt Oder;15;na;na;58;20;28;10;38;39;6;13;0;0;0
+;Neudamm;Neudamm;3340;;Frankfurt Oder;15;26.05.1860;1860;40;16;7;17;24;31;4;5;0;0;0
+;Neuwedell;Neuwedell;3030;;Frankfurt Oder;15;11.06.1863;1863;47;19;14;14;28;27;4;16;0;0;0
+;Peitz;Peitz;3377;;Frankfurt Oder;15;01.06.1862;1862;82;48;10;24;34;72;5;5;0;0;0
+;Pförten;Pfoerten;979;;Frankfurt Oder;15;11.07.1862;1862;21;2;2;17;19;18;0;3;0;0;0
+;Schönfließ;Schoenfliess;2870;;Frankfurt Oder;15;11.08.1862;1862;45;10;10;25;35;30;2;13;0;0;0
+;Seelow;Seelow;3137;;Frankfurt Oder;15;11.06.1861;1861;55;16;11;28;39;39;11;5;0;0;0
+;Senftenberg;Senftenberg;1504;;Frankfurt Oder;15;05.10.1862;1862;103;67;10;26;36;89;11;3;0;0;0
+;Soldin;Soldin;5556;;Frankfurt Oder;15;27.04.1861;1861;40;20;9;11;20;7;19;14;0;0;0
+;Sommerfeld;Sommerfeld;7677;;Frankfurt Oder;15;18.07.1862;1862;50;0;10;40;50;19;6;25;0;0;0
+;Sonnenburg;Sonnenburg;3732;;Frankfurt Oder;15;04.06.1861;1861;66;24;20;22;42;37;13;16;0;0;0
+;Sorau;Sorau;9215;;Frankfurt Oder;15;21.08.1860;1860;171;86;28;57;85;110;19;42;0;0;0
+;Spremberg;Spremberg;6375;;Frankfurt Oder;15;12.04.1862;1862;250;90;65;95;160;201;15;34;0;0;0
+;Vetschau;Vetschau;2054;;Frankfurt Oder;15;01.06.1862;1862;61;19;13;29;42;59;1;1;0;0;0
+;Woldenberg;Woldenberg;3951;;Frankfurt Oder;15;21.05.1861;1861;67;30;7;30;37;29;5;33;0;0;0
+;Zehden;Zehden;1603;;Frankfurt Oder;15;16.03.1863;1863;38;9;16;13;29;36;0;2;0;0;0
+;Zielenzig;Zielenzig;5355;;Frankfurt Oder;15;01.05.1862;1862;101;41;23;37;60;57;7;37;0;0;0
+;Afen;Afen;5500;;Magdeburg;16;22.06.1862;1862;50;10;3;37;40;28;7;15;0;0;0
+;Arendsee;Arendsee;2000;;Magdeburg;16;14.07.1864;1864;37;5;3;29;32;19;3;15;0;0;0
+;Aschersleben;Aschersleben;10000;;Magdeburg;16;12.05.1862;1862;85;0;43;42;85;49;16;19;0;1;0
+;Bismark;Bismark;1900;;Magdeburg;16;07.05.1863;1863;72;47;3;22;25;58;4;10;0;0;0
+;Buckau;Buckau;7000;;Magdeburg;16;26.06.1862;1862;127;0;22;105;127;70;23;34;0;0;0
+;Burg;Burg;15000;;Magdeburg;16;01.10.1863;1863;60;0;0;60;60;60;0;0;0;0;0
+;Burg;Burg;15000;;Magdeburg;16;29.10.1864;1864;99;71;2;26;28;42;10;47;0;0;0
+;Calbe;Calbe;10000;;Magdeburg;16;20.08.1861;1861;120;80;20;20;40;67;28;25;0;0;0
+;Derenburg;Derenburg;2567;;Magdeburg;16;28.06.1864;1864;58;21;3;34;37;39;0;19;0;0;0
+;Egeln;Egeln;4500;;Magdeburg;16;30.08.1862;1862;100;38;14;48;62;74;3;23;0;0;0
+;Gardelegen;Gardelegen;6153;;Magdeburg;16;10.07.1861;1861;na;na;na;na;na;na;na;na;#WERT!;#WERT!;#WERT!
+;Genthin;Genthin;3300;;Magdeburg;16;01.05.1862;1862;38;2;25;11;36;15;5;18;0;0;0
+;Groß-Ammensleben;Gross-Ammensleben;2000;;Magdeburg;16;21.05.1864;1864;30;4;11;15;26;18;6;6;0;0;0
+;Halberstadt;Halberstadt;24000;;Magdeburg;16;19.03.1861;1861;140;25;15;100;115;49;6;85;0;0;0
+;Klötze;Kloetze;2800;;Magdeburg;16;03.09.1863;1863;81;36;13;32;45;43;5;33;0;0;0
+;Magdeburg;Magdeburg;70000;;Magdeburg;16;07.05.1848;1848;482;96;163;223;386;178;41;263;0;0;0
+;Magdeburg;Magdeburg;70000;;Magdeburg;16;01.07.1862;1862;115;0;45;70;115;3;7;105;0;0;0
+;Mieste;Mieste;1000;;Magdeburg;16;12.08.1863;1863;47;26;12;9;21;44;1;2;0;0;0
+;Neuhaldensleben;Neuhaldensleben;5000;;Magdeburg;16;17.07.1861;1861;106;42;28;36;64;79;18;9;0;0;0
+;Alte Neustadt;Alte Neustadt;7000;;Magdeburg;16;23.07.1864;1864;36;0;31;5;36;24;3;9;0;0;0
+;Neue Neustadt;Neue Neustadt;14000;;Magdeburg;16;10.08.1860;1860;72;4;16;52;68;60;2;10;0;0;0
+;Oschersleben;Oschersleben;8000;;Magdeburg;16;26.05.1863;1863;50;15;24;11;35;34;3;13;0;0;0
+;Osterburg;Osterburg;3000;;Magdeburg;16;17.05.1862;1862;34;9;9;16;25;20;4;10;0;0;0
+;Osterwieck;Osterwieck;3000;;Magdeburg;16;17.04.1863;1863;65;24;0;11;11;52;3;10;30;0;0
+;Quedlinburg;Quedlinburg;16000;;Magdeburg;16;01.10.1860;1860;66;15;2;49;51;40;8;18;0;0;0
+;Salze;Salze;3534;;Magdeburg;16;12.09.1861;1861;56;18;3;35;38;33;8;14;0;1;0
+;Salzwedel;Salzwedel;8000;;Magdeburg;16;14.05.1862;1862;129;73;6;50;56;47;16;66;0;0;0
+;Schönebeck;Schoenebeck;9000;;Magdeburg;16;26.08.1861;1861;80;0;5;75;80;41;6;33;0;0;0
+;Schönebeck;Schoenebeck;9000;;Magdeburg;16;26.07.1862;1862;32;0;22;10;32;23;5;5;0;-1;0
+;Seehausen;Seehausen;4000;;Magdeburg;16;14.05.1862;1862;92;40;20;32;52;61;6;25;0;0;0
+;Staßfurth;Stassfurth;4000;;Magdeburg;16;23.08.1860;1860;80;0;20;60;80;25;15;40;0;0;0
+;Stendal;Stendal;8500;;Magdeburg;16;11.12.1861;1861;120;76;22;22;44;62;14;44;0;0;0
+;Sudenburg;Sudenburg;6000;;Magdeburg;16;03.07.1862;1862;36;1;14;21;35;23;8;5;0;0;0
+;Tangerhütte;Tangerhuette;2000;;Magdeburg;16;01.07.1864;1864;39;4;0;35;35;28;4;7;0;0;0
+;Tangermünde;Tangermuende;4785;;Magdeburg;16;26.08.1862;1862;98;35;23;40;63;66;10;22;0;0;0
+;Wernigerode;Wernigerode;6000;;Magdeburg;16;30.07.1862;1862;70;8;15;47;62;47;2;21;0;0;0
+;Wolmirstedt;Wolmirstedt;4000;;Magdeburg;16;01.09.1863;1863;38;0;14;24;38;30;5;3;0;0;0
+;Alsleben;Alsleben;3000;;Merseburg;16;14.04.1861;1861;97;38;17;42;59;76;7;13;0;1;0
+;Belgern;Belgern;3240;;Merseburg;16;06.09.1863;1863;60;19;4;37;41;51;5;4;0;0;0
+;Bitterfeld;Bitterfeld;4500;;Merseburg;16;01.06.1861;1861;127;0;31;96;127;79;12;36;0;0;0
+;Brehna;Brehna;2000;;Merseburg;16;12.07.1862;1862;60;30;16;14;30;60;0;0;0;0;0
+;Cönnern;Coennern;3500;;Merseburg;16;01.11.1860;1860;96;51;15;30;45;50;9;28;0;9;0
+;Delitzsch;Delitzsch;8000;;Merseburg;16;08.01.1862;1862;163;61;44;58;102;136;9;18;0;0;0
+;Delitzsch;Delitzsch;8000;;Merseburg;16;08.09.1863;1863;40;0;0;40;40;40;0;0;0;0;0
+;Dommitsch;Dommitsch;2096;;Merseburg;16;26.09.1862;1862;45;21;16;8;24;37;3;5;0;0;0
+;Düben;Dueben;5000;;Merseburg;16;01.09.1860;1860;43;7;21;15;36;29;8;2;0;4;0
+;Eilenburg;Eilenburg;10069;;Merseburg;16;25.05.1861;1861;140;0;39;101;140;75;21;44;0;0;0
+;Eisleben;Eisleben;11000;;Merseburg;16;01.07.1863;1863;178;56;51;71;122;83;45;50;0;0;0
+;Elsterwerda;Elsterwerda;2000;;Merseburg;16;03.07.1864;1864;55;18;9;28;37;50;4;1;0;0;0
+;Gräfenhainischen;Graefenhainischen;3000;;Merseburg;16;03.04.1862;1862;83;33;19;31;50;57;6;20;0;0;0
+;Herzberg bei Torgau;Herzberg bei Torgau;4000;;Merseburg;16;20.08.1863;1863;99;17;58;24;82;94;3;2;0;0;0
+;Hettstedt;Hettstedt;5000;;Merseburg;16;05.09.1863;1863;80;36;8;36;44;68;1;11;0;0;0
+;Lauchhammer (Eisenwerk);Lauchhammer (Eisenwerk);300;;Merseburg;16;20.06.1863;1863;13;0;10;3;13;5;2;6;0;0;0
+;Liebenwerda;Liebenwerda;2800;;Merseburg;16;20.06.1863;1863;110;32;12;66;78;100;4;16;0;-10;0
+;Löbejün;Loebejuen;3650;;Merseburg;16;28.08.1863;1863;23;2;14;7;21;17;2;4;0;0;0
+;Ortrand;Ortrand;1600;;Merseburg;16;06.09.1862;1862;57;12;25;20;45;49;3;5;0;0;0
+;Prettin;Prettin;2000;;Merseburg;16;24.11.1862;1862;85;29;37;19;56;50;12;23;0;0;0
+;Sangerhausen;Sangerhausen;8000;;Merseburg;16;15.06.1861;1861;71;25;12;34;46;38;8;25;0;0;0
+;Schlieben;Schlieben;2000;;Merseburg;16;01.11.1863;1863;60;29;14;17;31;39;8;3;0;10;0
+;Torgau;Torgau;7243;;Merseburg;16;01.05.1861;1861;156;56;47;53;100;113;3;40;0;0;0
+;Wettin;Wettin;3800;;Merseburg;16;23.09.1860;1860;43;11;10;22;32;26;9;8;0;0;0
+;Wittenberg;Wittenberg;11000;;Merseburg;16;12.05.1862;1862;187;74;31;82;113;113;16;57;0;1;0
+;Zörbig;Zoerbig;3500;;Merseburg;16;31.08.1861;1861;na;na;na;na;na;na;na;na;#WERT!;#WERT!;#WERT!
+;Barmen;Barmen;59304;;Regierungsbezirk Düsseldorf;51;1.10.1846;1846;315;155;50;110;160;30;0;285;0;0;0
+;Barmen;Barmen;59304;;Regierungsbezirk Düsseldorf;51;1.04.1863;1863;176;0;88;88;176;130;13;33;0;0;0
+;Bourscheid;Bourscheid;5000;;Regierungsbezirk Düsseldorf;51;1.08.1861;1861;69;46;6;17;23;27;4;38;0;0;0
+;Crefeld;Crefeld;53081;;Regierungsbezirk Düsseldorf;51;1.05.1855;1855;507;192;75;240;315;20;72;415;0;0;0
+;Düsseldorf;Duesseldorf;50000;;Regierungsbezirk Düsseldorf;51;15.05.1859;1859;122;17;34;71;105;55;23;44;0;0;0
+;Duisburg;Duisburg;21162;;Regierungsbezirk Düsseldorf;51;25.03.1848;1848;375;255;40;80;120;206;16;153;0;0;0
+;Elberfeld;Elberfeld;60500;;Regierungsbezirk Düsseldorf;51;20.04.1847;1847;520;156;140;224;364;109;64;347;0;0;0
+;Elberfeld;Elberfeld;60500;;Regierungsbezirk Düsseldorf;51;3.08.1860;1860;515;49;200;266;466;403;9;103;0;0;0
+;Elberfeld;Elberfeld;60500;;Regierungsbezirk Düsseldorf;51;4.08.1861;1861;72;33;4;35;39;56;11;5;0;0;0
+;Essen;Essen;31173;;Regierungsbezirk Düsseldorf;51;18.10.1859;1859;198;102;19;77;96;50;44;104;0;0;0
+;Geldern;Geldern;4790;;Regierungsbezirk Düsseldorf;51;1.05.1862;1862;146;103;12;31;43;40;25;81;0;0;0
+;Mönchen Gladbach;Moenchen Gladbach;18643;;Regierungsbezirk Düsseldorf;51;8.09.1858;1858;189;149;22;18;40;24;18;147;0;0;0
+;Haan;Haan;3000;;Regierungsbezirk Düsseldorf;51;1.06.1863;1863;80;20;27;33;60;74;4;2;0;0;0
+;Hückeswagen;Hueckeswagen;3000;;Regierungsbezirk Düsseldorf;51;5.07.1850;1850;65;28;4;33;37;13;1;51;0;0;0
+;Hüls;Huels;6000;;Regierungsbezirk Düsseldorf;51;1.08.1861;1861;81;45;6;30;36;74;3;4;0;0;0
+;Kempen;Kempen;5000;;Regierungsbezirk Düsseldorf;51;20.08.1860;1860;57;17;6;34;40;20;6;31;0;0;0
+;Langenberg;Langenberg;4500;;Regierungsbezirk Düsseldorf;51;11.07.1863;1863;83;19;12;52;64;55;4;24;0;0;0
+;Lennep;Lennep;8000;;Regierungsbezirk Düsseldorf;51;3.06.1860;1860;87;27;18;42;60;45;6;36;0;0;0
+;Lobberich;Lobberich;3608;;Regierungsbezirk Düsseldorf;51;2.09.1861;1861;50;35;0;15;15;36;4;10;0;0;0
+;Moers;Moers;3000;;Regierungsbezirk Düsseldorf;51;2.07.1860;1860;45;23;0;22;22;14;6;25;0;0;0
+;Mülheim an der Ruhr;Muelheim an der Ruhr;13689;;Regierungsbezirk Düsseldorf;51;11.08.1856;1856;161;81;22;58;80;55;18;88;0;0;0
+;Neuß;Neuss;12000;;Regierungsbezirk Düsseldorf;51;13.08.1861;1861;112;92;3;17;20;35;4;73;0;0;0
+;Opladen;Opladen;2000;;Regierungsbezirk Düsseldorf;51;4.10.1862;1862;35;20;4;11;15;11;11;13;0;0;0
+;Rade vorm Walde;Rade vorm Walde;2000;;Regierungsbezirk Düsseldorf;51;1.02.1862;1862;38;20;12;6;18;23;1;14;0;0;0
+;Rees;Rees;3600;;Regierungsbezirk Düsseldorf;51;15.07.1861;1861;70;47;7;16;23;28;9;33;0;0;0
+;Remscheid;Remscheid;18540;;Regierungsbezirk Düsseldorf;51;16.06.1861;1861;170;80;30;60;90;94;19;57;0;0;0
+;Rheinberg;Rheinberg;3000;;Regierungsbezirk Düsseldorf;51;21.09.1863;1863;27;14;0;13;13;8;3;16;0;0;0
+;Rheydt;Rheydt;13000;;Regierungsbezirk Düsseldorf;51;1.03.1858;1858;120;90;12;18;30;7;14;99;0;0;0
+;Ronsdorf;Ronsdorf;8000;;Regierungsbezirk Düsseldorf;51;28.06.1860;1860;75;30;20;25;45;10;8;57;0;0;0
+;Ruhrort;Ruhrort;7000;;Regierungsbezirk Düsseldorf;51;1.07.1860;1860;228;151;67;10;77;166;12;50;0;0;0
+;Ruhrort;Ruhrort;7000;;Regierungsbezirk Düsseldorf;51;1.02.1863;1863;57;14;6;37;43;25;0;32;0;0;0
+;Solingen;Solingen;10000;;Regierungsbezirk Düsseldorf;51;1.07.1861;1861;66;20;10;36;46;9;9;48;0;0;0
+;Solingen;Solingen;10000;;Regierungsbezirk Düsseldorf;51;5.08.1863;1863;200;100;30;70;100;190;0;10;0;0;0
+;Steele;Steele;4000;;Regierungsbezirk Düsseldorf;51;5.01.1863;1863;76;44;3;29;32;42;6;28;0;0;0
+;St. Tönis;St. Toenis;6000;;Regierungsbezirk Düsseldorf;51;1.07.1861;1861;49;20;7;22;29;32;3;14;0;0;0
+;Viersen;Viersen;15097;;Regierungsbezirk Düsseldorf;51;23.06.1858;1858;94;66;4;24;28;26;7;61;0;0;0
+;Werden an der Ruhr;Werden an der Ruhr;5000;;Regierungsbezirk Düsseldorf;51;25.07.1860;1860;51;17;0;34;34;24;2;25;0;0;0
+;Wesel;Wesel;13865;;Regierungsbezirk Düsseldorf;51;24.05.1860;1860;99;31;14;54;68;35;28;36;0;0;0
+;Wermelskirchen;Wermelskirchen;2000;;Regierungsbezirk Düsseldorf;51;11.08.1860;1860;57;19;8;30;38;24;6;27;0;0;0
+;Wickrath;Wickrath;1700;;Regierungsbezirk Düsseldorf;51;15.07.1860;1860;44;24;15;5;20;15;4;25;0;0;0
+;Bonn;Bonn;20397;;Regierungsbezirk Köln;52;6.05.1860;1860;288;126;17;145;162;156;80;52;0;0;0
+;Euskirchen;Euskirchen;4400;;Regierungsbezirk Köln;52;14.04.1864;1864;34;14;0;20;20;19;5;10;0;0;0
+;Gummersbach;Gummersbach;1138;;Regierungsbezirk Köln;52;3.03.1861;1861;32;5;0;27;27;3;2;27;0;0;0
+;Köln;Koeln;117805;;Regierungsbezirk Köln;52;1843;1843;202;39;23;140;163;15;18;169;0;0;0
+;Köln;Koeln;117805;;Regierungsbezirk Köln;52;16.11.1863;1863;175;67;68;40;108;92;31;52;0;0;0
+;Siegburg;Siegburg;3500;;Regierungsbezirk Köln;52;14.07.1862;1862;80;30;8;42;50;26;19;35;0;0;0
+;Aachen;Aachen;61921;;Regierungsbezirk Aachen;53;28.06.1860;1860;227;70;19;138;157;20;33;174;0;0;0
+;Aachen;Aachen;61921;;Regierungsbezirk Aachen;53;13.01.1861;1861;60;3;2;55;57;9;9;42;0;0;0
+;Aachen;Aachen;61921;;Regierungsbezirk Aachen;53;18.11.1863;1863;56;3;30;23;53;52;2;2;0;0;0
+;Düren;Dueren;10000;;Regierungsbezirk Aachen;53;14.06.1847;1847;94;36;6;52;58;22;13;59;0;0;0
+;Erkelenz;Erkelenz;2170;;Regierungsbezirk Aachen;53;8.07.1860;1860;71;45;0;26;26;37;4;30;0;0;0
+;Eupen;Eupen;13630;;Regierungsbezirk Aachen;53;20.07.1861;1861;92;45;2;45;47;7;11;74;0;0;0
+;Haaren;Haaren;1800;;Regierungsbezirk Aachen;53;1.03.1863;1863;31;13;3;15;18;23;4;4;0;0;0
+;Stolberg;Stolberg;9000;;Regierungsbezirk Aachen;53;1.06.1862;1862;65;40;9;16;25;27;15;23;0;0;0
+;Adenau;Adenau;1435;;Regierungsbezirk Koblenz;54;11.05.1862;1862;56;42;4;10;14;20;23;13;0;0;0
+;Altenkirchen;Altenkirchen;1700;;Regierungsbezirk Koblenz;54;8.06.1860;1860;36;8;2;26;28;4;12;20;0;0;0
+;Bendorf;Bendorf;3000;;Regierungsbezirk Koblenz;54;1.01.1861;1861;66;28;26;12;38;30;8;28;0;0;0
+;Koblenz;Koblenz;23000;;Regierungsbezirk Koblenz;54;6.05.1860;1860;80;26;22;32;54;18;4;58;0;0;0
+;Neuwied;Neuwied;8000;;Regierungsbezirk Koblenz;54;1.07.1860;1860;80;30;20;30;50;59;10;11;0;0;0
+;Burgsteinfurt;Burgsteinfurt;3142;;Regierungsbezirk Münster;55;18.06.1862;1862;69;37;3;29;32;16;21;32;0;0;0
+;Ibbenbüren;Ibbenbueren;3000;;Regierungsbezirk Münster;55;24.04.1862;1862;58;31;2;25;27;28;9;21;0;0;0
+;Münster;Muenster;26000;;Regierungsbezirk Münster;55;1.08.1862;1862;181;99;52;30;82;33;27;121;0;0;0
+;Recklinghausen;Recklinghausen;5000;;Regierungsbezirk Münster;55;16.03.1863;1863;51;32;0;19;19;26;6;19;0;0;0
+;Bielefeld;Bielefeld;15855;;Regierungsbezirk Minden;56;18.10.1859;1859;272;127;39;106;145;114;27;131;0;0;0
+;Bünde;Buende;1900;;Regierungsbezirk Minden;56;6.05.1863;1863;118;54;16;48;64;33;11;74;0;0;0
+;Gütersloh;Guetersloh;4000;;Regierungsbezirk Minden;56;17.08.1862;1862;70;40;10;20;30;15;0;55;0;0;0
+;Herford;Herford;10800;;Regierungsbezirk Minden;56;1.02.1861;1861;60;12;10;38;48;19;21;20;0;0;0
+;Herford;Herford;10800;;Regierungsbezirk Minden;56;1.10.1864;1864;70;20;15;35;50;50;0;20;0;0;0
+;Höxter;Hoexter;5000;;Regierungsbezirk Minden;56;31.01.1864;1864;71;14;8;49;57;33;4;34;0;0;0
+;Minden;Minden;13200;;Regierungsbezirk Minden;56;15.08.1860;1860;73;27;0;46;46;1;7;65;0;0;0
+;Paderborn;Paderborn;3000;;Regierungsbezirk Minden;56;1.08.1863;1863;86;51;11;24;35;28;4;54;0;0;0
+;Rheda;Rheda;2800;;Regierungsbezirk Minden;56;11.08.1861;1861;39;12;0;27;27;31;2;6;0;0;0
+;Wiedenbrück;Wiedenbrueck;2800;;Regierungsbezirk Minden;56;11.08.1860;1860;24;2;16;6;22;18;0;6;0;0;0
+;Altena;Altena;6000;;Regierungsbezirk Arnsberg;57;22.07.1861;1861;50;20;8;22;30;21;5;24;0;0;0
+;Arnsberg;Arnsberg;4600;;Regierungsbezirk Arnsberg;57;26.07.1861;1861;103;77;14;12;26;35;33;35;0;0;0
+;Barop;Barop;600;;Regierungsbezirk Arnsberg;57;4.05.1862;1862;42;26;4;12;16;20;8;14;0;0;0
+;Bochum;Bochum;11712;;Regierungsbezirk Arnsberg;57;14.06.1860;1860;298;238;10;50;60;105;45;148;0;0;0
+;Kamen;Kamen;3500;;Regierungsbezirk Arnsberg;57;23.08.1854;1854;107;56;19;32;51;60;5;42;0;0;0
+;Kamen;Kamen;3500;;Regierungsbezirk Arnsberg;57;15.08.1862;1862;52;19;4;29;33;31;0;21;0;0;0
+;Dortmund;Dortmund;28000;;Regierungsbezirk Arnsberg;57;19.07.1862;1862;386;253;48;85;133;135;50;201;0;0;0
+;Erwitte;Erwitte;2500;;Regierungsbezirk Arnsberg;57;25.06.1864;1864;44;25;10;9;19;16;14;14;0;0;0
+;Gevelsberg;Gevelsberg;850;;Regierungsbezirk Arnsberg;57;4.01.1862;1862;66;37;16;13;29;31;0;35;0;0;0
+;Hagen;Hagen;9780;;Regierungsbezirk Arnsberg;57;23.03.1864;1864;169;75;32;62;94;71;15;83;0;0;0
+;Halver;Halver;900;;Regierungsbezirk Arnsberg;57;1.04.1861;1861;53;34;7;12;19;27;6;20;0;0;0
+;Hamm;Hamm;14085;;Regierungsbezirk Arnsberg;57;26.05.1861;1861;142;94;36;12;48;10;7;125;0;0;0
+;Haspe;Haspe;4000;;Regierungsbezirk Arnsberg;57;27.08.1860;1860;110;70;22;18;40;45;8;57;0;0;0
+;Haßlinghausen u. Hiddinghausen;Hasslinghausen u. Hiddinghausen;4370;;Regierungsbezirk Arnsberg;57;29.06.1862;1862;90;70;6;14;20;75;11;4;0;0;0
+;Hemer;Hemer;1200;;Regierungsbezirk Arnsberg;57;11.08.1862;1862;60;34;7;19;26;19;4;37;0;0;0
+;Herdecke;Herdecke;3000;;Regierungsbezirk Arnsberg;57;1.05.1862;1862;50;25;16;9;25;20;4;26;0;0;0
+;Herne;Herne;2700;;Regierungsbezirk Arnsberg;57;?;?;30;18;0;12;12;17;0;13;0;0;0
+;Hörde;Hoerde;8230;;Regierungsbezirk Arnsberg;57;11.05.1861;1861;150;102;11;37;48;84;22;44;0;0;0
+;Iserlohn;Iserlohn;17000;;Regierungsbezirk Arnsberg;57;6.08.1861;1861;175;95;10;70;80;16;26;133;0;0;0
+;Iserlohn;Iserlohn;17000;;Regierungsbezirk Arnsberg;57;13.06.1861;1861;75;27;11;37;48;67;1;7;0;0;0
+;Laasphe;Laasphe;2700;;Regierungsbezirk Arnsberg;57;31.03.1863;1863;70;40;14;16;30;40;10;20;0;0;0
+;Lippstadt;Lippstadt;7400;;Regierungsbezirk Arnsberg;57;1.10.1861;1861;154;83;11;60;71;32;31;91;0;0;0
+;Lüdenscheid;Luedenscheid;6214;;Regierungsbezirk Arnsberg;57;1.05.1861;1861;97;29;24;44;68;51;15;31;0;0;0
+;Lünen an der Lippe;Luenen an der Lippe;3120;;Regierungsbezirk Arnsberg;57;1.08.1862;1862;71;48;2;21;23;26;6;39;0;0;0
+;Neuenrade;Neuenrade;1500;;Regierungsbezirk Arnsberg;57;15.06.1862;1862;23;12;4;7;11;13;1;9;0;0;0
+;Niedermaßen;Niedermassen;687;;Regierungsbezirk Arnsberg;57;1.08.1863;1863;20;11;3;6;9;15;0;5;0;0;0
+;Olpe;Olpe;2300;;Regierungsbezirk Arnsberg;57;4.08.1864;1864;44;24;3;17;20;8;5;31;0;0;0
+;Schwelm;Schwelm;5300;;Regierungsbezirk Arnsberg;57;1.08.1861;1861;127;77;28;22;50;12;9;106;0;0;0
+;Siegen;Siegen;8400;;Regierungsbezirk Arnsberg;57;25.08.1862;1862;142;31;50;61;111;85;7;50;0;0;0
+;Soest;Soest;11396;;Regierungsbezirk Arnsberg;57;7.04.1862;1862;142;104;18;20;38;43;19;80;0;0;0
+;Unna;Unna;7000;;Regierungsbezirk Arnsberg;57;21.08.1861;1861;102;68;20;14;34;42;21;39;0;0;0
+;Vörde;Voerde;2500;;Regierungsbezirk Arnsberg;57;10.02.1862;1862;100;70;30;0;30;49;5;46;0;0;0
+;Wellinghofen;Wellinghofen;4000;;Regierungsbezirk Arnsberg;57;19.06.1863;1863;66;36;10;20;30;54;3;9;0;0;0
+;Wetter an der Ruhr;Wetter an der Ruhr;2050;;Regierungsbezirk Arnsberg;57;19.02.1861;1861;37;19;5;13;18;5;13;19;0;0;0
+;Witten;Witten;10100;;Regierungsbezirk Arnsberg;57;31.10.1863;1863;185;111;7;67;74;69;24;92;0;0;0
+;Erfurt;Erfurt;36000;;Regierungsbezirk Erfurt;84;8.09.1861;1861;285;125;37;123;160;126;41;118;0;0;0
+;Grabe;Grabe;370;;Regierungsbezirk Erfurt;84;1.08.1862;1862;20;5;12;3;15;19;1;0;0;0;0
+;Heiligenstadt;Heiligenstadt;4977;;Regierungsbezirk Erfurt;84;12.05.1861;1861;67;24;8;35;43;27;10;30;0;0;0
+;Langensalza;Langensalza;8500;;Regierungsbezirk Erfurt;84;26.09.1860;1860;96;12;34;50;84;59;12;25;0;0;0
+;Mühlhausen;Muehlhausen;1600;;Regierungsbezirk Erfurt;84;30.06.1849;1849;227;107;64;56;120;111;23;93;0;0;0
+;Nordhausen;Nordhausen;17500;;Regierungsbezirk Erfurt;84;7.05.1848;1848;99;59;20;20;40;94;2;3;0;0;0
+;Nordhausen;Nordhausen;17500;;Regierungsbezirk Erfurt;84;23.07.1860;1860;80;0;0;80;80;15;16;49;0;0;0
+;Nordhausen;Nordhausen;17500;;Regierungsbezirk Erfurt;84;1.01.1864;1864;20;0;3;17;20;14;0;6;0;0;0
+;Ranis;Ranis;1560;;Regierungsbezirk Erfurt;84;1.07.1860;1860;48;3;10;35;45;32;10;6;0;0;0
+;Schleusingen;Schleusingen;2993;;Regierungsbezirk Erfurt;84;21.09.1860;1860;51;16;7;17;24;30;3;7;11;11;0
+;Sömmerda;Soemmerda;5500;;Regierungsbezirk Erfurt;84;15.06.1864;1864;50;0;28;22;50;46;1;3;0;0;0
+;Stützerbach;Stuetzerbach;700;;Regierungsbezirk Erfurt;84;13.04.1861;1861;22;0;10;12;22;21;0;1;0;0;0
+;Suhl;Suhl;8000;;Regierungsbezirk Erfurt;84;12.08.1861;1861;87;54;21;12;33;74;8;5;0;0;0
+;Thamsbrück;Thamsbrueck;1800;;Regierungsbezirk Erfurt;84;2.06.1862;1862;45;5;10;30;40;40;3;2;0;0;0
+;Tennstedt;Tennstedt;3000;;Regierungsbezirk Erfurt;84;25.03.1862;1862;33;8;13;12;25;29;3;1;0;0;0
+;Baumholder;Baumholder;1800;;Regierungsbezirk Trier;67;24.08.1862;1862;57;30;9;18;27;36;8;13;0;0;0
+;Elversberg;Elversberg;1458;;Regierungsbezirk Trier;67;22.08.1863;1863;32;10;2;20;22;28;0;4;0;0;0
+;Merzig;Merzig;4000;;Regierungsbezirk Trier;67;15.06.1862;1862;28;8;5;15;20;20;4;4;0;0;0
+;Neunkichen;Neunkichen;6000;;Regierungsbezirk Trier;67;14.08.1861;1861;76;68;5;3;8;32;11;33;0;0;0
+;Ottweiler;Ottweiler;3817;;Regierungsbezirk Trier;67;24.05.1862;1862;98;44;26;28;54;53;18;27;0;0;0
+;St. Johann-Saarbrücken;St. Johann-Saarbruecken;12000;;Regierungsbezirk Trier;67;21.04.1862;1862;50;5;0;45;45;16;14;20;0;0;0
+;St. Johann-Saarbrücken;St. Johann-Saarbruecken;12000;;Regierungsbezirk Trier;67;18.06.1860;1860;153;111;30;12;42;50;33;70;0;0;0
+;Trier;Trier;21000;;Regierungsbezirk Trier;67;31.05.1861;1861;70;26;13;31;44;35;17;18;0;0;0
+;Trier;Trier;21000;;Regierungsbezirk Trier;67;29.11.1862;1862;165;85;27;53;80;91;24;50;0;0;0
+;St. Wendel;St. Wendel;3600;;Regierungsbezirk Trier;67;3.08.1861;1861;133;80;10;43;53;103;15;15;0;0;0
