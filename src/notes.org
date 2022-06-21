@@ -1,0 +1,59 @@
+#+title:     Notes
+#+author:    William East
+#+email:     williameast@live.com
+
+
+* Nix Shell
+
+1. start eshell or shell process. Does not work with Vterm because it produces
+   an error.
+2. run the nix shell, which is configured NOT to store locally added files in
+   _Libs. This does not work.
+   The shell.nix file should contain:
+   #+begin_src nix
+    with import <nixpkgs> { };
+    let
+    my-r = rWrapper.override {
+        packages = with rPackages; [
+          # PACKAGES GO HERE
+        ];
+    };
+    in pkgs.mkShell {
+    buildInputs = with pkgs; [
+        git
+        glibcLocales
+        openssl
+        which
+        openssh
+        curl
+        wget
+        my-r
+    ];
+    shellHook = ''
+        mkdir -p "$(pwd)/_libs"
+    '';
+    }
+   #+end_src
+3. when nix-shell is loaded, start R process.
+4. now, run M-x eshell RET R RET
+5. When R process is running, some shit happens. no idea. have to press enter as
+   it tries to parse the R welcome splash. (?)
+6. Now, the R shell is the remote to which ESS sends all of it's commands.
+7. Installing packages now occurs within the rPackages in the shell.nix file.
+* Using nix-direnv
+
+One approach is to use a local directory managing tool. traditionally, direnv
+would load up environmental variables when a shell enters a given directory. The
+way I have set this up now is that I can load into the directory with a program
+that automatically looks for the ~shell.nix~ file which it loads into the
+terminal.
+
+** enter [[https://github.com/nix-community/nix-direnv][nix-direnv]]
+With this tool, I can automatically look for the ~shell.nix~ file which it loads into the
+terminal. I just need an ~.envrc~ file in that directory that tells it to load a
+shell from the ~shell.nix~.
+make sure you are in the correct directory, and run
+#+begin_src sh
+echo "use nix" >> .envrc
+direnv allow
+#+end_src
