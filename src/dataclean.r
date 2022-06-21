@@ -61,12 +61,17 @@ sum(!matches$is_matched)
 
 write.csv(dplyr::filter(matches, is_matched == FALSE), "../data/Proxy Nationalism/matches_reference.csv", sep = ";")
 
+# The issue here is the matching is not working currently. it seems ot be an issue with the CSV encoding.
 
 
-matchmaker <- read.csv("../data/Proxy Nationalism/name_matches.csv")
+matchmaker <- read_csv("../data/Proxy Nationalism/name_matches.csv")
+
+matchmaker$Old
 
 for (i in 1:length(matchmaker)) {
   turn$city <- gsub(matchmaker$Old[i], matchmaker$New[i], turn$city)
 }
 
 turn$city <- gsub("Preussisch-Eylau", "Pr. Eylau", turn$city)
+
+turn %>% filter(is.na(city))
