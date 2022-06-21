@@ -54,7 +54,11 @@ matches
 
 # if you run this, you can see how many remain:
 
+print("cases matched:")
 sum(matches$is_matched)
+print("cases remaining:")
 sum(!matches$is_matched)
 
 dplyr::filter(matches, is_matched == FALSE)
+
+turn$city <- gsub("Preussisch-Eylau", "Pr. Eylau", turn$city)
