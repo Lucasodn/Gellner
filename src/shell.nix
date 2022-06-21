@@ -12,6 +12,8 @@ let
       languageserver
       pacman
       stringi
+      foreign
+      readstata13
     ];
   };
 in pkgs.mkShell {
