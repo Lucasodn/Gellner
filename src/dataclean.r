@@ -59,9 +59,14 @@ sum(matches$is_matched)
 print("cases remaining:")
 sum(!matches$is_matched)
 
-dplyr::filter(matches, is_matched == FALSE)
+write.csv(dplyr::filter(matches, is_matched == FALSE), "../data/Proxy Nationalism/matches_reference.csv", sep = ";")
 
 
-matchmaker <- read.csv()
+
+matchmaker <- read.csv("../data/Proxy Nationalism/name_matches.csv")
+
+for (i in 1:length(matchmaker)) {
+  turn$city <- gsub(matchmaker$Old[i], matchmaker$New[i], turn$city)
+}
 
 turn$city <- gsub("Preussisch-Eylau", "Pr. Eylau", turn$city)
