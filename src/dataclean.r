@@ -114,6 +114,21 @@ maindf <- maindf %>%
             Beruf_Handwerk_64 = sum(Beruf_Handwerk),
             Beruf_Gelehrte_64 = sum(Beruf_Gelehrte),
             Beruf_Kaufleute_64 = sum(Beruf_Kaufleute))
-  
 
+
+
+pop_growth <- maindf %>%
+  group_by(townkey1849) %>%
+  summarise(pop_growth_rate = (popcivil / lag(popcivil) - 1)) %>%
+  filter(!is.na(pop_growth_rate))
+
+turnshare <- maindf %>%
+  filter(year == 1864) %>%
+  group_by(townkey1849) %>%
+  summarize(turner_share = Gesamt64 / popcivil)
+
+maindf <- left_join(maindf, turnshare)
+maindf <- left_join(maindf, pop_growth)
+
+View(maindf)
 
