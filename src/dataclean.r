@@ -1,13 +1,17 @@
 # load packages
 library(tidyverse)
+require(readstata13)
+
 ## Read in the .dta files
-hornung_dt_cs <- readstata13::read.dta13("../data/Population&Rail/hornung-rail-cross-section.dta")
+# hornung_dt_cs <- readstata13::read.dta13("../data/Population&Rail/hornung-rail-cross-section.dta")
 hornung_dt_ps <- readstata13::read.dta13("../data/Population&Rail/hornung-rail-panel-city.dta")
 
+# read in data f
 turnen <- read.csv("../data/Proxy Nationalism/Turnvereine Prussia.csv", sep = ";")
 
-colnames(turnen)
+
 turn <- turnen %>% dplyr::select(city, Jahr, Gesamt, Beruf_Handwerk, Beruf_Gelehrte, Beruf_Kaufleute)
+
 
 turn[turn == "na"] <- "Missing Value"
 
@@ -64,9 +68,6 @@ write.csv(dplyr::filter(matches,
 
 
 matchmaker <- read.csv("../data/Proxy Nationalism/name_matches.csv", sep=";")
-
-matchmaker$Old
-
 
 for (i in 1:length(matchmaker$Old)) {
   turn$city <- gsub(matchmaker$Old[i], matchmaker$New[i], turn$city)
@@ -130,5 +131,7 @@ turnshare <- maindf %>%
 maindf <- left_join(maindf, turnshare)
 maindf <- left_join(maindf, pop_growth)
 
-View(maindf)
+# save file for future procesing
+save(maindf, file = "../data/turner_share.RData")
+
 
