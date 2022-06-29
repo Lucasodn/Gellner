@@ -218,6 +218,15 @@ pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/ipehd_1864_pop_demo 
 pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
 
 
+# Here we are just grouping by doubled or trippled kreiskeys and summing the values
+# to get a single value per kreiskey
+# egal welche variablen du bei pop15 dazufügst, musst du die summarizen
+pop15to65 <- pop15to65 %>%
+  group_by(kreiskey1864) %>%
+  summarize(pop1864_tot_15to65 = sum(pop1864_tot_15to65))
+
+
+
 
 countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1849_rel_deno.csv",
   sep = ","
