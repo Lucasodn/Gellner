@@ -1,174 +1,173 @@
-Column1;name;is_matched
-1;Allenburg;FALSCH
-2;Gutstadt;FALSCH
-3;Mohrungen;FALSCH
-4;Preussisch-Holland;FALSCH
-5;Wehlau;FALSCH
-6;Eydkuhnen;FALSCH
-7;Ruß;FALSCH
-8;Neufahrwasser;FALSCH
-9;Neustadt Westpreußen;FALSCH
-10;Preussisch Stargard;FALSCH
-11;Tiegenhof;FALSCH
-12;Chodziehen;FALSCH
-13;Scheidemühl;FALSCH
-14;Hohensalza;FALSCH
-15;Gostyn;FALSCH
-16;Kempem;FALSCH
-17;Oberwitzko;FALSCH
-18;Rackwitz;FALSCH
-19;Rawicz;FALSCH
-20;Unruhstadt;FALSCH
-21;Freiwaldau;FALSCH
-22;Grunau;FALSCH
-23;Haynau;FALSCH
-24;Landeshut;FALSCH
-25;Langenöls;FALSCH
-26;Tiefenfurt;FALSCH
-27;Warmbrunn;FALSCH
-28;Ernsdorf;FALSCH
-29;Guhrau;FALSCH
-30;Langenbielau;FALSCH
-31;Nimptsch;FALSCH
-32;Ohlau;FALSCH
-33;Steinau an der Oder;FALSCH
-34;Wartenberg;FALSCH
-35;Wohlau;FALSCH
-36;Wüstegiersdorf;FALSCH
-37;Wüstewaltersdorf;FALSCH
-38;Constadt;FALSCH
-39;Creuzburg;FALSCH
-40;Grottkau;FALSCH
-41;Kattowitz;FALSCH
-42;Königshütte;FALSCH
-43;Laurahütte;FALSCH
-44;Lipine;FALSCH
-45;Myslowitz;FALSCH
-46;Neustadt ;FALSCH
-47;Sohrau;FALSCH
-48;Zaberze;FALSCH
-49;Alt-Damm;FALSCH
-50;Anclam;FALSCH
-51;Bredow;FALSCH
-52;Garz an der Oder;FALSCH
-53;Grabow an der Oder;FALSCH
-54;Greifenberg;FALSCH
-55;Greifenhagen;FALSCH
-56;Gülzow;FALSCH
-57;Jasenitz;FALSCH
-58;Naugard;FALSCH
-59;Neutorney, Vorstadt von Stettin;FALSCH
-60;Poelitz;FALSCH
-61;Treptow an der Rega;FALSCH
-62;Treptow an der Tollense;FALSCH
-63;Ueckermünde;FALSCH
-64;Callies;FALSCH
-65;Coeslin;FALSCH
-66;Lauenburg in Pommern;FALSCH
-67;Polzin;FALSCH
-68;Schievelbein;FALSCH
-69;Stolp;FALSCH
-70;Bergen auf Rügen;FALSCH
-71;Damgarten;FALSCH
-72;Eldena;FALSCH
-73;Garz auf Rügen;FALSCH
-74;Loitz;FALSCH
-75;Putbus auf Rügen;FALSCH
-76;Sagard;FALSCH
-77;Triebsees;FALSCH
-78;Alt-Landsberg;FALSCH
-79;Cöpnick;FALSCH
-80;Cremmen;FALSCH
-81;Fehrberlin;FALSCH
-82;Freyenstein;FALSCH
-83;Freyenwalde;FALSCH
-84;Jüterbogk;FALSCH
-85;Neu-Lewin;FALSCH
-86;Neuruppin;FALSCH
-87;Neustadt an der Dosse;FALSCH
-88;Nowawetz;FALSCH
-89;Putlitz;FALSCH
-90;Schwedt an der Oder;FALSCH
-91;Straßburg;FALSCH
-92;Straußberg;FALSCH
-93;Wendisch-Buchholz;FALSCH
-94;Werneuchen;FALSCH
-95;Wriezen;FALSCH
-96;Calau;FALSCH
-97;Cüstrin;FALSCH
-98;Cüstrin lange Vorstadt;FALSCH
-99;Forst;FALSCH
-100;Frankfurt Oder;FALSCH
-101;Neuwedell;FALSCH
-102;Schönfließ;FALSCH
-103;Afen;FALSCH
-104;Buckau;FALSCH
-105;Calbe;FALSCH
-106;Derenburg;FALSCH
-107;Groß-Ammensleben;FALSCH
-108;Klötze;FALSCH
-109;Magdeburg;FALSCH
-110;Mieste;FALSCH
-111;Alte Neustadt;FALSCH
-112;Neue Neustadt;FALSCH
-113;Osterwieck;FALSCH
-114;Salze;FALSCH
-115;Staßfurth;FALSCH
-116;Sudenburg;FALSCH
-117;Tangerhütte;FALSCH
-118;Wolmirstedt;FALSCH
-119;Cönnern;FALSCH
-120;Delitzsch;FALSCH
-121;Elsterwerda;FALSCH
-122;Gräfenhainischen;FALSCH
-123;Herzberg bei Torgau;FALSCH
-124;Hettstedt;FALSCH
-125;Lauchhammer (Eisenwerk);FALSCH
-126;Bourscheid;FALSCH
-127;Mönchen Gladbach;FALSCH
-128;Haan;FALSCH
-129;Hüls;FALSCH
-130;Lobberich;FALSCH
-131;Moers;FALSCH
-132;Mülheim an der Ruhr;FALSCH
-133;Neuß;FALSCH
-134;Opladen;FALSCH
-135;Rade vorm Walde;FALSCH
-136;Rheydt;FALSCH
-137;Steele;FALSCH
-138;St. Tönis;FALSCH
-139;Werden an der Ruhr;FALSCH
-140;Wermelskirchen;FALSCH
-141;Wickrath;FALSCH
-142;Köln;FALSCH
-143;Erkelenz;FALSCH
-144;Haaren;FALSCH
-145;Stolberg;FALSCH
-146;Adenau;FALSCH
-147;Altenkirchen;FALSCH
-148;Koblenz;FALSCH
-149;Burgsteinfurt;FALSCH
-150;Gütersloh;FALSCH
-151;Herford;FALSCH
-152;Barop;FALSCH
-153;Kamen;FALSCH
-154;Erwitte;FALSCH
-155;Gevelsberg;FALSCH
-156;Halver;FALSCH
-157;Haspe;FALSCH
-158;Haßlinghausen u. Hiddinghausen;FALSCH
-159;Hemer;FALSCH
-160;Herne;FALSCH
-161;Lünen an der Lippe;FALSCH
-162;Niedermaßen;FALSCH
-163;Vörde;FALSCH
-164;Wellinghofen;FALSCH
-165;Wetter an der Ruhr;FALSCH
-166;Grabe;FALSCH
-167;Stützerbach;FALSCH
-168;Thamsbrück;FALSCH
-169;Tennstedt;FALSCH
-170;Baumholder;FALSCH
-171;Elversberg;FALSCH
-172;Neunkichen;FALSCH
-173;St. Johann-Saarbrücken;FALSCH
+"","name","is_matched"
+"1","Allenburg",FALSE
+"2","Gutstadt",FALSE
+"3","Mohrungen",FALSE
+"4","Preussisch-Eylau",FALSE
+"5","Preussisch-Holland",FALSE
+"6","Wehlau",FALSE
+"7","Eydkuhnen",FALSE
+"8","Ru√ü",FALSE
+"9","Neufahrwasser",FALSE
+"10","Neustadt Westpreu√üen",FALSE
+"11","Preussisch Stargard",FALSE
+"12","Tiegenhof",FALSE
+"13","Chodziehen",FALSE
+"14","Scheidem√ºhl",FALSE
+"15","Hohensalza",FALSE
+"16","Gostyn",FALSE
+"17","Kempem",FALSE
+"18","Oberwitzko",FALSE
+"19","Rackwitz",FALSE
+"20","Rawicz",FALSE
+"21","Unruhstadt",FALSE
+"22","Freiwaldau",FALSE
+"23","Grunau",FALSE
+"24","Haynau",FALSE
+"25","Landeshut",FALSE
+"26","Langen√∂ls",FALSE
+"27","Tiefenfurt",FALSE
+"28","Warmbrunn",FALSE
+"29","Ernsdorf",FALSE
+"30","Guhrau",FALSE
+"31","Langenbielau",FALSE
+"32","Nimptsch",FALSE
+"33","Ohlau",FALSE
+"34","Steinau an der Oder",FALSE
+"35","Wartenberg",FALSE
+"36","Wohlau",FALSE
+"37","W√ºstegiersdorf",FALSE
+"38","W√ºstewaltersdorf",FALSE
+"39","Constadt",FALSE
+"40","Creuzburg",FALSE
+"41","Grottkau",FALSE
+"42","Kattowitz",FALSE
+"43","K√∂nigsh√ºtte",FALSE
+"44","Laurah√ºtte",FALSE
+"45","Lipine",FALSE
+"46","Myslowitz",FALSE
+"47","Neustadt ",FALSE
+"48","Sohrau",FALSE
+"49","Zaberze",FALSE
+"50","Alt-Damm",FALSE
+"51","Anclam",FALSE
+"52","Bredow",FALSE
+"53","Garz an der Oder",FALSE
+"54","Grabow an der Oder",FALSE
+"55","Greifenberg",FALSE
+"56","Greifenhagen",FALSE
+"57","G√ºlzow",FALSE
+"58","Jasenitz",FALSE
+"59","Naugard",FALSE
+"60","Neutorney, Vorstadt von Stettin",FALSE
+"61","Poelitz",FALSE
+"62","Treptow an der Rega",FALSE
+"63","Treptow an der Tollense",FALSE
+"64","Ueckerm√ºnde",FALSE
+"65","Callies",FALSE
+"66","Coeslin",FALSE
+"67","Lauenburg in Pommern",FALSE
+"68","Polzin",FALSE
+"69","Schievelbein",FALSE
+"70","Stolp",FALSE
+"71","Bergen auf R√ºgen",FALSE
+"72","Damgarten",FALSE
+"73","Eldena",FALSE
+"74","Garz auf R√ºgen",FALSE
+"75","Loitz",FALSE
+"76","Putbus auf R√ºgen",FALSE
+"77","Sagard",FALSE
+"78","Triebsees",FALSE
+"79","Alt-Landsberg",FALSE
+"80","C√∂pnick",FALSE
+"81","Cremmen",FALSE
+"82","Fehrberlin",FALSE
+"83","Freyenstein",FALSE
+"84","Freyenwalde",FALSE
+"85","J√ºterbogk",FALSE
+"86","Neu-Lewin",FALSE
+"87","Neuruppin",FALSE
+"88","Neustadt an der Dosse",FALSE
+"89","Nowawetz",FALSE
+"90","Putlitz",FALSE
+"91","Schwedt an der Oder",FALSE
+"92","Stra√üburg",FALSE
+"93","Strau√überg",FALSE
+"94","Wendisch-Buchholz",FALSE
+"95","Werneuchen",FALSE
+"96","Wriezen",FALSE
+"97","Calau",FALSE
+"98","C√ºstrin",FALSE
+"99","C√ºstrin lange Vorstadt",FALSE
+"100","Forst",FALSE
+"101","Frankfurt Oder",FALSE
+"102","Neuwedell",FALSE
+"103","Sch√∂nflie√ü",FALSE
+"104","Afen",FALSE
+"105","Buckau",FALSE
+"106","Calbe",FALSE
+"107","Derenburg",FALSE
+"108","Gro√ü-Ammensleben",FALSE
+"109","Kl√∂tze",FALSE
+"110","Magdeburg",FALSE
+"111","Mieste",FALSE
+"112","Alte Neustadt",FALSE
+"113","Neue Neustadt",FALSE
+"114","Osterwieck",FALSE
+"115","Salze",FALSE
+"116","Sta√üfurth",FALSE
+"117","Sudenburg",FALSE
+"118","Tangerh√ºtte",FALSE
+"119","Wolmirstedt",FALSE
+"120","C√∂nnern",FALSE
+"121","Delitzsch",FALSE
+"122","Elsterwerda",FALSE
+"123","Gr√§fenhainischen",FALSE
+"124","Herzberg bei Torgau",FALSE
+"125","Hettstedt",FALSE
+"126","Lauchhammer (Eisenwerk)",FALSE
+"127","Bourscheid",FALSE
+"128","M√∂nchen Gladbach",FALSE
+"129","Haan",FALSE
+"130","H√ºls",FALSE
+"131","Lobberich",FALSE
+"132","Moers",FALSE
+"133","M√ºlheim an der Ruhr",FALSE
+"134","Neu√ü",FALSE
+"135","Opladen",FALSE
+"136","Rade vorm Walde",FALSE
+"137","Rheydt",FALSE
+"138","St. T√∂nis",FALSE
+"139","Werden an der Ruhr",FALSE
+"140","Wermelskirchen",FALSE
+"141","Wickrath",FALSE
+"142","K√∂ln",FALSE
+"143","Erkelenz",FALSE
+"144","Haaren",FALSE
+"145","Stolberg",FALSE
+"146","Adenau",FALSE
+"147","Altenkirchen",FALSE
+"148","Koblenz",FALSE
+"149","Burgsteinfurt",FALSE
+"150","G√ºtersloh",FALSE
+"151","Herford",FALSE
+"152","Barop",FALSE
+"153","Kamen",FALSE
+"154","Erwitte",FALSE
+"155","Gevelsberg",FALSE
+"156","Halver",FALSE
+"157","Haspe",FALSE
+"158","Ha√ülinghausen u. Hiddinghausen",FALSE
+"159","Hemer",FALSE
+"160","Herne",FALSE
+"161","L√ºnen an der Lippe",FALSE
+"162","Niederma√üen",FALSE
+"163","V√∂rde",FALSE
+"164","Wellinghofen",FALSE
+"165","Wetter an der Ruhr",FALSE
+"166","Grabe",FALSE
+"167","St√ºtzerbach",FALSE
+"168","Tennstedt",FALSE
+"169","Baumholder",FALSE
+"170","Elversberg",FALSE
+"171","Neunkichen",FALSE
+"172","St. Johann-Saarbr√ºcken",FALSE
