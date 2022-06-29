@@ -182,8 +182,9 @@ maindf <- maindf %>%
 
 # this list is to help choose which kreiskeys are merged into one.
 
+kreiskeychanger <- data.frame(oldkk = c(4, 40, 65, 249, 286), newkk = c(3, 39, 64, 246, 281))
 
-
+maindf
 # read in file delienating the changes in the kreiskey over time. as the kreiskeys in 1849
 # are not the same as in 1864.
 
@@ -193,6 +194,19 @@ mergerfile <- read.csv("../data/ipehd_merge_county.csv", sep = ";") %>%
 # merge with main dataset.
 maindf <- left_join(maindf, mergerfile)
 
+# this function changes the kreiskeys depnding on the old-new data frame provided earler.
+# this needs to be given the exact column names. TODO make generalizable
+kreiskeycleaner <- function(x, y) {
+  for (i in 1:length(x$kreiskey1864)) {
+    for (j in 1:length(y$oldkk)) {
+      if (x$kreiskey1864[i] == y$oldkk[j]) {
+        x$kreiskey1864[i] <- y$newkk[j]
+      }
+    }
+  }
+  return(x)
+}
+
 
 # reading in the data set providing the population by age bracket. we use this to get
 # a proxy for the working population.
@@ -200,6 +214,9 @@ maindf <- left_join(maindf, mergerfile)
 pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/ipehd_1864_pop_demo (1).csv",
   sep = ","
 ) %>% select(kreiskey1864, pop1864_tot_15to65)
+
+pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
+
 
 
 countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1849_rel_deno.csv",
@@ -218,7 +235,9 @@ countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1
       rel1849_menno,
       rel1849_jew
     )
-  ) %>%
-  colnames(countypop1849)
+  )
+
+
+countypop1849 <- kreiskeycleaner(countypop1849, kreiskeychanger)
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_share.RDS")
