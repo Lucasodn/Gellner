@@ -245,6 +245,20 @@ countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1
       rel1849_jew
     )
   )
+# doing the same thing for 1864 motherfuckerrrr
+countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1864_rel_deno (1).csv",
+                          sep = ",") %>% mutate(countypop1864 = (rel1864_pro +
+                                                                   rel1864_cat + 
+                                                                   rel1864_jew +
+                                                                   rel1864_oth),
+                                                rel1864_other = (rel1864_jew +
+                                                                   rel1864_oth)) %>%
+  select(kreiskey1864,
+         countypop1864,
+         rel1864_pro,
+         rel1864_cat,
+         rel1864_other)
+
 
 
 countypop1849 <- kreiskeycleaner(countypop1849, kreiskeychanger)
