@@ -167,6 +167,10 @@ maindf <- maindf %>%
 # and city (townkey) as they are used in other data sets.
 
 
+# Since all Industrialisation Data is on county (Kreis) level, we group all Cities
+# to their Kreiskey to then merge with Idnustrialisation Data
+
+
 maindf[is.na(maindf)] <- 0
 
 maindf <- maindf %>%
@@ -180,13 +184,20 @@ maindf <- maindf %>%
     Beruf_Kaufleute_64 = sum(Beruf_Kaufleute_64)
   )
 
-# this list is to help choose which kreiskeys are merged into one.
+# The Data set of Hornung with which we merged the Turner misses 5 kreiskeys. 
+# These kreiskeys are from 5 Landkreise which are also a big City (cologne, Königsberg, etc.),
+# thus the missing Kreiskeys of these Landkreise are allocated to their City.
+# This is done by change the Kreiskey of the Landkreis to the same of the City.
+# To remember even though Hornung Data set is not perfect, it was good to merge Turner
+# because it contained nearly all Turncities, which no other data set did.
+# This list is to help choose which kreiskeys are merged into one.
 
 kreiskeychanger <- data.frame(oldkk = c(4, 40, 65, 249, 286), newkk = c(3, 39, 64, 246, 281))
 
 maindf
-# read in file delienating the changes in the kreiskey over time. as the kreiskeys in 1849
-# are not the same as in 1864.
+
+# Read in file delienating the changes in the kreiskey over time. As the kreiskeys in 1849
+# are not the same as in 1864. We need to merge the keys of 1864 to 1849.
 
 mergerfile <- read.csv("../data/ipehd_merge_county.csv", sep = ";") %>%
   select(kreiskey1864, kreiskey1849)
@@ -194,8 +205,8 @@ mergerfile <- read.csv("../data/ipehd_merge_county.csv", sep = ";") %>%
 # merge with main dataset.
 maindf <- left_join(maindf, mergerfile)
 
-# this function changes the kreiskeys depnding on the old-new data frame provided earler.
-# this needs to be given the exact column names. TODO make generalizable
+# This function changes the kreiskeys depnding on the old-new data frame provided earlier.
+# This needs to be given the exact column names. TODO make generalizable
 kreiskeycleaner <- function(x, y) {
   for (i in 1:length(x$kreiskey1864)) {
     for (j in 1:length(y$oldkk)) {
@@ -212,8 +223,7 @@ kreiskeycleaner <- function(x, y) {
 # a proxy for the working population.
 
 pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/ipehd_1864_pop_demo (1).csv",
-  sep = ","
-) %>% select(kreiskey1864, pop1864_tot_15to65)
+  sep = ",") %>% select(kreiskey1864, pop1864_tot_15to65)
 
 pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
 
@@ -225,28 +235,40 @@ pop15to65 <- pop15to65 %>%
   group_by(kreiskey1864) %>%
   summarize(pop1864_tot_15to65 = sum(pop1864_tot_15to65))
 
+maindf <- left_join(maindf, pop15to65)
 
+# Because popcivil of Hronung Data set onyl provides data for population in a county,
+# who live in cities, we read in full data on poulation. Including denomination,
+# which might be useful for later analysis. 
+# Reading in religious data in 1849 to get: 1) pop data at county level, 2) denomiation data.
 
-
-countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1849_rel_deno.csv",
+countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1849_rel_deno.csv",
   sep = ","
 ) %>%
   mutate(
-    countypop1849 = sum(
-      rel1849_pro,
-      rel1849_cat,
-      rel1849_greek,
-      rel1849_menno,
-      rel1849_jew
-    ),
-    rel_other = sum(
-      rel1849_greek,
-      rel1849_menno,
-      rel1849_jew
-    )
-  )
-# doing the same thing for 1864 motherfuckerrrr
-countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1864_rel_deno (1).csv",
+    countypop1849 = (rel1849_pro +
+                    rel1849_cat +
+                    rel1849_greek +
+                    rel1849_menno+
+                    rel1849_jew),
+    
+    rel1849_other = (rel1849_greek +
+                rel1849_menno +
+                rel1849_jew)) %>%
+
+select(countypop1849, 
+       rel1849_pro, 
+       rel1849_cat, 
+       rel1849_other,
+       kreiskey1849)
+
+
+maindf <- left_join(maindf, countypop1849)
+
+# Doing the same thing for 1864, plus we use the Kreiskeychanger 
+# to merge Kreiskeys of 1864 to 1849.
+
+countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1864_rel_deno (1).csv",
                           sep = ",") %>% mutate(countypop1864 = (rel1864_pro +
                                                                    rel1864_cat + 
                                                                    rel1864_jew +
@@ -261,6 +283,52 @@ countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion/ipehd_1
 
 
 
-countypop1849 <- kreiskeycleaner(countypop1849, kreiskeychanger)
+countypop1864 <- kreiskeycleaner(countypop1864, kreiskeychanger)
+
+countypop1864 <- countypop1864 %>%
+
+group_by(kreiskey1864) %>%
+  summarise(
+    countypop1864 = sum(countypop1864),
+    rel1864_pro = sum(rel1864_pro),
+    rel1864_cat = sum(rel1864_cat),
+    rel1864_other = sum(rel1864_other))
+
+countypop1864 <- countypop1864
+
+view(countypop1864)
+
+# +++Fehler ging von alleine weg...
+# Merge grouped countypop1864 to Main file.
+
+maindf <- left_join(maindf, countypop1864)
+
+
+
+# Read in Industry worker, remember to use Kreiskeychanger
+# indu64 den wir schon mal eingelesen haben ist noch gespeichert fyi.
+Indu1864 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Industry 1864_occ_indu (1).csv",
+                     sep = ",") %>% select(kreiskey1864, occ1864_ind)
+
+Indu1864 <- kreiskeycleaner(Indu1864, kreiskeychanger)
+
+view(Indu1864)
+
+
+# Replace NAs with 0s, as missing values mean worker are count to other county.
+Indu1864$occ1864_ind <- ifelse(is.na(Indu1864$occ1864_ind), 0, Indu1864$occ1864_ind)
+
+
+# +++Fehler+++ läuft noch nicht, findet Kreiskey1864 nicht obowhl er da ist.
+Indu1864 <- Indu1864 %>%
+group_by(kreiskey1864) %>%
+  summarise(
+  occ1864_ind = sum(occ1864_ind))
+
+maindf <- left_join(maindf, Indu1864)
+
+View(maindf)
+
+
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_share.RDS")
