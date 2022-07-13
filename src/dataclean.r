@@ -382,9 +382,13 @@ factorywork1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Fac
     + mill1849_dutchmills_masters + mill1849_dutchmills_assistants
     + mill1849_animals_workers + mill1849_steam_workers + mill1849_oil_workers
     + mill1849_fulling_workers + mill1849_tan_workers + mill1849_saw_german_workers
-    + mill1849_saw_dutch_workers + mill1849_saw_circular_workers + mill1849_other_workers)%>%
+    + mill1849_saw_dutch_workers + mill1849_saw_circular_workers + mill1849_other_workers,
+    
+    all_factoryworker1849 = textileworker1849 + metal_miningworker1849
+    + other_factoryworker1849)%>%
   
-  select(kreiskey1849, textileworker1849, metal_miningworker1849, other_factoryworker1849)
+  select(kreiskey1849, textileworker1849, metal_miningworker1849, 
+         other_factoryworker1849, all_factoryworker1849)
 
   
 maindf <- left_join(maindf, factorywork1849)
@@ -435,7 +439,7 @@ maindf <- left_join(maindf, steamengines)
 craftsmen <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Craftsmen 1849_occ_craft Kopie.csv",
                          sep = ",")
   
-  transmute(kreiskey1849)
+  #transmute(kreiskey1849)
 
   
 craftsmenlength <- dim(craftsmen)[2]
@@ -462,6 +466,9 @@ edu1849 <- read.csv("../data/Data Proxy Industrializtaion/Education/ipehd_1849_e
   select(kreiskey1849, students1849)
 
 maindf <- left_join(maindf, edu1849)
+
+
+maindf <- distinct(maindf)
 
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_share.RDS")

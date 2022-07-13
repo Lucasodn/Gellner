@@ -22,6 +22,41 @@ dat %>%
   ggplot(aes(Gesamt64)) +
   geom_histogram()
 
+
+# dealing with duisburg essen edge case
+edgecase <- filter(dat, kreiskey1849 %in% c(289, 290))
+
+edgecase <- edgecase %>% group_by(kreiskey1849) %>% summarize(popcivil = mean(popcivil),
+                                                  Gesamt64 = mean(Gesamt64),
+                                                  Beruf_Handwerk_64 = mean(Beruf_Handwerk_64),
+                                                  Beruf_Gelehrte_64 = mean(Beruf_Gelehrte_64),
+                                                  Beruf_Kaufleute_64 = mean(Beruf_Kaufleute_64),
+                                                  kreiskey1864 = as.integer(mean(kreiskey1864)),
+                                                  pop1864_tot_15to65 = sum(pop1864_tot_15to65),
+                                                  countypop1849 = mean(countypop1849),
+                                                  rel1849_pro = mean(rel1849_pro),
+                                                  rel1849_cat = mean(rel1849_cat),
+                                                  rel1849_other = mean(rel1849_other),
+                                                  countypop1864 = sum(countypop1864),
+                                                  rel1864_pro = sum(rel1864_pro),
+                                                  rel1864_cat = sum(rel1864_cat),
+                                                  rel1864_other = sum(rel1864_other),
+                                                  occ1864_ind = sum(occ1864_ind),
+                                                  students1864 = sum(students1864),
+                                                  textileworker1849 = mean(textileworker1849),
+                                                  metal_miningworker1849 = mean(metal_miningworker1849),
+                                                  other_factoryworker1849 = mean(other_factoryworker1849),
+                                                  all_factoryworker1849 = mean(all_factoryworker1849),
+                                                  farmer1849 = mean(farmer1849),
+                                                  steamengines1849 = mean(steamengines1849),
+                                                  crafters = mean(crafters),
+                                                  students1849 = mean(students1849))
+dat <- dat[-c(which(dat$kreiskey1849 %in% c(289, 290))),]
+
+
+edgecase
+dat <- rbind(dat, edgecase)
+
 # get the correlation coefficient, which is 0.44
 cor(dat$Gesamt64, dat$occ1864_ind)
 
@@ -38,101 +73,280 @@ dat_share <- dat %>% transmute(
   textileworker_share1849 = textileworker1849/countypop1849,
   metal_miningworker_share1849 = metal_miningworker1849/countypop1849,
   other_factoryworker_share1849 = other_factoryworker1849/countypop1849,
+  factoryworker_share1849 = all_factoryworker1849/countypop1849,
   farmer_share1849 = farmer1849/countypop1849,
   crafter_share1849 = crafters/countypop1849,
   steamengines_mining1849 = steamengines1849/metal_miningworker1849,
   steamengines_capita1849 = steamengines1849/countypop1849,
-  student_share1849 = students1849/countypop1849)
+  student_share1849 = students1849/countypop1849,
+  prot_share1849 = rel1849_pro/countypop1849,)
+
 
 # Regression industry worker and Truner
 ###########################################################################
-#                 MAIN MODEL 1864
+#                 MAIN MODEL Industry worker 1864
 ###########################################################################
 
 models <- list()
 
 
-models$basic <- lm(data = dat_share, turner_share ~ indworker_share)
+models$basic <- lm(data = dat_share, turner_share ~ indworker_share1864)
 
-models$with_prot <- lm(data = dat_share, turner_share ~ indworker_share +
-                                                 prot_share)
+models$with_prot <- lm(data = dat_share, turner_share ~ indworker_share1864 +
+                         prot_share1864)
 
-models$with_cat <- lm(data = dat_share, turner_share ~ indworker_share +
-                                             cat_share)
+models$with_edu <- lm(data = dat_share, turner_share ~ indworker_share1864 +
+                        student_share1864)
 
-models$with_edu <- lm(data = dat_share, turner_share ~ indworker_share +
-                                        student_share)
-
-models$full <- lm(data = dat_share, turner_share ~ indworker_share +
-                                 prot_share +
-                                 cat_share +
-                                 student_share)
+models$full <- lm(data = dat_share, turner_share ~ indworker_share1864 +
+                    prot_share1864 +
+                    student_share1864)
 ###########################################################################
 # MODEL NAMES
 modelnames <- c("Industry worker share",
                 "Protestant share",
-                "Catholic share",
                 "Enrollment rate")
 
 
 ###########################################################################
 # EXTRACT MODEL FOR PUBLISHING
 stargazer(models,
-          out = "../publish/full_model.tex",
-          title = "Linear Model Results",
+          out = "../publish/full_modelindustry1864.tex",
+          title = "Linear Model Results Industry Worker 1864",
           covariate.labels = modelnames,
           dep.var.labels = "Share of Turner", font.size = "tiny")
 
 
+stargazer(models,type = "text",
+          out = "../misc/modelindustry1864.txt",
+          title = "Linear Model Results Industry Worker 1864",
+          covariate.labels = modelnames,
+          dep.var.labels = "Share of Turner")
+
 # Regression industry worker and Truner
 ###########################################################################
-#                 MAIN MODEL 1849
+#                 MAIN MODEL Steam Engines 1849
 ###########################################################################
 
-models <- list()
+models_steam <- list()
 
 
-models$basic1849 <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                         metal_miningworker_share1849 + other_factoryworker_share1849)
+models_steam$basic <- lm(data = dat_share, turner_share ~ steamengines_capita1849)
 
-models$with_crafters <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                             metal_miningworker_share1849 + other_factoryworker_share1849
-                           + crafter_share1849)
+models_steam$with_prot <- lm(data = dat_share, turner_share ~ steamengines_capita1849 +
+                         prot_share1864)
 
-models$with_farmer <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                           metal_miningworker_share1849 + other_factoryworker_share1849
-                         + farmer_share1849)
+models_steam$with_edu <- lm(data = dat_share, turner_share ~ steamengines_capita1849 +
+                        student_share1864)
 
-models$with_steamengines <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                                 metal_miningworker_share1849 + other_factoryworker_share1849
-                          + steamengines_capita1849)
-
-models$with_education <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                                 metal_miningworker_share1849 + other_factoryworker_share1849
-                               + student_share1849)
-
-models$full1849 <- lm(data = dat_share, turner_share ~ textileworker_share1849 +
-                        metal_miningworker_share1849 + other_factoryworker_share1849
-                      + crafter_share1849
-                      + farmer_share1849
-                      + steamengines_capita1849
-                      + student_share1849)
+models_steam$full <- lm(data = dat_share, turner_share ~ steamengines_capita1849 +
+                    prot_share1864 +
+                    student_share1864)
 ###########################################################################
 # MODEL NAMES
-modelnames <- c("Factory worker share",
-                "Craftmens share",
-                "Farmer share",
-                "Steamengines",
-                "School Enrollment rate")
+modelnames_steam<- c("Steam Engines per capita",
+                "Protestant share",
+                "Enrollment rate")
 
 
 ###########################################################################
 # EXTRACT MODEL FOR PUBLISHING
-stargazer(models,
-          out = "../publish/full_model1849.tex",
-          title = "Linear Model Results by Industrialization in 1849",
-          covariate.labels = modelnames,
+stargazer(models_steam,
+          out = "../publish/full_modelsteampercapita.tex",
+          title = "Linear Model Results Steam Engines per capita",
+          covariate.labels = modelnames_steam,
           dep.var.labels = "Share of Turner", font.size = "tiny")
+
+
+stargazer(models_steam
+          ,type = "text",
+          out = "../misc/modelsteampercapita.txt",
+          title = "Linear Model Results Steam Engines per capita",
+          covariate.labels = modelnames_steam,
+          dep.var.labels = "Share of Turner")
+
+
+###########################################################################
+#                 MAIN MODEL Farmer 1849
+###########################################################################
+
+models_farmer <- list()
+
+
+models_farmer$basic <- lm(data = dat_share, turner_share ~ farmer_share1849)
+
+models_farmer$with_prot <- lm(data = dat_share, turner_share ~ farmer_share1849 +
+                               prot_share1864)
+
+models_farmer$with_edu <- lm(data = dat_share, turner_share ~ farmer_share1849 +
+                              student_share1864)
+
+models_farmer$full <- lm(data = dat_share, turner_share ~ farmer_share1849 +
+                          prot_share1864 +
+                          student_share1864)
+###########################################################################
+# MODEL NAMES
+modelnames_farmer<- c("Farmer share",
+                     "Protestant share",
+                     "Enrollment rate")
+
+
+###########################################################################
+# EXTRACT MODEL FOR PUBLISHING
+stargazer(models_farmer,
+          out = "../publish/full_modelfarmer.tex",
+          title = "Linear Model Results Farmer share",
+          covariate.labels = modelnames_farmer,
+          dep.var.labels = "Share of Turner", font.size = "tiny")
+
+
+stargazer(models_farmer,
+          type = "text",
+          out = "../misc/modelfarmer.txt",
+          title = "Linear Model Results Farmer share",
+          covariate.labels = modelnames_farmer,
+          dep.var.labels = "Share of Turner")
+
+###########################################################################
+#                 MAIN MODEL Craftsmen 1849
+###########################################################################
+
+models_crafts <- list()
+
+
+models_crafts$basic <- lm(data = dat_share, turner_share ~ crafter_share1849)
+
+models_crafts$with_prot <- lm(data = dat_share, turner_share ~ crafter_share1849 +
+                                prot_share1864)
+
+models_crafts$with_edu <- lm(data = dat_share, turner_share ~ crafter_share1849 +
+                               student_share1864)
+
+models_crafts$full <- lm(data = dat_share, turner_share ~ crafter_share1849 +
+                           prot_share1864 +
+                           student_share1864)
+###########################################################################
+# MODEL NAMES
+modelnames_crafts<- c("Craftsmen share",
+                      "Protestant share",
+                      "Enrollment rate")
+
+
+###########################################################################
+# EXTRACT MODEL FOR PUBLISHING
+stargazer(models_crafts,
+          out = "../publish/full_modelcrafts.tex",
+          title = "Linear Model Results Craftsmen share",
+          covariate.labels = modelnames_crafts,
+          dep.var.labels = "Share of Turner", font.size = "tiny")
+
+
+stargazer(models_crafts,
+          type = "text",
+          out = "../misc/modelcrafts.txt",
+          title = "Linear Model Results Craftsmen share",
+          covariate.labels = modelnames_farmer,
+          dep.var.labels = "Share of Turner")
+
+
+###########################################################################
+#                 MAIN MODEL Metal and Mining Worker 1849
+###########################################################################
+
+models_metal <- list()
+
+
+models_metal$basic <- lm(data = dat_share, turner_share ~ metal_miningworker_share1849)
+
+models_metal$with_prot <- lm(data = dat_share, turner_share ~ metal_miningworker_share1849 +
+                                prot_share1864)
+
+models_metal$with_edu <- lm(data = dat_share, turner_share ~ metal_miningworker_share1849 +
+                               student_share1864)
+
+models_metal$full <- lm(data = dat_share, turner_share ~ metal_miningworker_share1849 +
+                           prot_share1864 +
+                           student_share1864)
+###########################################################################
+# MODEL NAMES
+modelnames_metal<- c("Metal and Mining share",
+                      "Protestant share",
+                      "Enrollment rate")
+
+
+###########################################################################
+# EXTRACT MODEL FOR PUBLISHING
+stargazer(models_metal,
+          out = "../publish/full_modelmetal.tex",
+          title = "Linear Model Results Metal and Mining share",
+          covariate.labels = modelnames_metal,
+          dep.var.labels = "Share of Turner", font.size = "tiny")
+
+
+stargazer(models_metal,
+          type = "text",
+          out = "../misc/modelmetal.txt",
+          title = "Linear Model Results Metal and Mining share",
+          covariate.labels = modelnames_metal,
+          dep.var.labels = "Share of Turner")
+
+
+###########################################################################
+#                 MAIN MODEL Factory Worker 1849
+###########################################################################
+
+models_factory <- list()
+
+
+models_factory$basic <- lm(data = dat_share, turner_share ~ factoryworker_share1849)
+
+models_factory$with_prot <- lm(data = dat_share, turner_share ~ factoryworker_share1849 +
+                               prot_share1864)
+
+models_factory$with_edu <- lm(data = dat_share, turner_share ~ factoryworker_share1849 +
+                              student_share1864)
+
+models_factory$full <- lm(data = dat_share, turner_share ~ factoryworker_share1849 +
+                          prot_share1864 +
+                          student_share1864)
+###########################################################################
+# MODEL NAMES
+modelnames_factory<- c("Factory worker share",
+                     "Protestant share",
+                     "Enrollment rate")
+
+
+###########################################################################
+# EXTRACT MODEL FOR PUBLISHING
+stargazer(models_factory,
+          out = "../publish/full_modelfactory.tex",
+          title = "Linear Model Results Factory",
+          covariate.labels = modelnames_factory,
+          dep.var.labels = "Share of Turner", font.size = "tiny")
+
+
+stargazer(models_factory,
+          type = "text",
+          out = "../misc/modelfactory.txt",
+          title = "Linear Model Results Factory",
+          covariate.labels = modelnames_factory,
+          dep.var.labels = "Share of Turner")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###########################################################################
 # Only counties where Turnvereine exist
