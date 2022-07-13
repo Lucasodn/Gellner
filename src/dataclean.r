@@ -293,7 +293,6 @@ group_by(kreiskey1864) %>%
     rel1864_other = sum(rel1864_other))
 
 
-# +++Fehler ging von alleine weg...
 # Merge grouped countypop1864 to Main file.
 
 maindf <- left_join(maindf, countypop1864)
@@ -450,6 +449,19 @@ craftsmen <- select(craftsmen, kreiskey1849, crafters)
 
 
 maindf <- left_join(maindf, craftsmen)
+
+# Read in Education for school enrollment rate in 1849
+
+edu1849 <- read.csv("../data/Data Proxy Industrializtaion/Education/ipehd_1849_edu_stud.csv") %>%
+  transmute(kreiskey1849,
+            students1849 = edu1849_pub_ele_stud_m + edu1849_pub_ele_stud_f
+            + edu1849_pub_mim_stud_m + edu1849_pub_mif_stud_f 
+            + edu1849_pub_high_stud_m + edu1849_pub_pgy_stud_m 
+            + edu1849_pub_gym_stud_m + edu1849_pub_sem_stud)%>%
+  
+  select(kreiskey1849, students1849)
+
+maindf <- left_join(maindf, edu1849)
 
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_share.RDS")
