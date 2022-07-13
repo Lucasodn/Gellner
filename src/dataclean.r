@@ -194,7 +194,6 @@ maindf <- maindf %>%
 
 kreiskeychanger <- data.frame(oldkk = c(4, 40, 65, 249, 286), newkk = c(3, 39, 64, 246, 281))
 
-maindf
 
 # Read in file delienating the changes in the kreiskey over time. As the kreiskeys in 1849
 # are not the same as in 1864. We need to merge the keys of 1864 to 1849.
@@ -286,7 +285,6 @@ countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Populat
 countypop1864 <- kreiskeycleaner(countypop1864, kreiskeychanger)
 
 countypop1864 <- countypop1864 %>%
-
 group_by(kreiskey1864) %>%
   summarise(
     countypop1864 = sum(countypop1864),
@@ -294,9 +292,6 @@ group_by(kreiskey1864) %>%
     rel1864_cat = sum(rel1864_cat),
     rel1864_other = sum(rel1864_other))
 
-countypop1864 <- countypop1864
-
-view(countypop1864)
 
 # +++Fehler ging von alleine weg...
 # Merge grouped countypop1864 to Main file.
@@ -312,23 +307,149 @@ Indu1864 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Industry 1
 
 Indu1864 <- kreiskeycleaner(Indu1864, kreiskeychanger)
 
-view(Indu1864)
-
 
 # Replace NAs with 0s, as missing values mean worker are count to other county.
-Indu1864$occ1864_ind <- ifelse(is.na(Indu1864$occ1864_ind), 0, Indu1864$occ1864_ind)
+# Indu1864$occ1864_ind <- ifelse(is.na(Indu1864$occ1864_ind), 0, Indu1864$occ1864_ind)
 
 
-# +++Fehler+++ läuft noch nicht, findet Kreiskey1864 nicht obowhl er da ist.
+# one kreiskey has an NA a the stadt level but not the kreislevel, so we set it 
+# to zero so adding it up giving a sum value. 
+Indu1864$occ1864_ind[3] <- 0
+
+# Group Kreiskeys together for single observation
 Indu1864 <- Indu1864 %>%
 group_by(kreiskey1864) %>%
   summarise(
   occ1864_ind = sum(occ1864_ind))
 
+
+
 maindf <- left_join(maindf, Indu1864)
 
-View(maindf)
+# Read in Number of students for measuring Education
+# Sum up all students in school, exclude Kindergarten and nursery.
 
+edu1864 <- read.csv("../data/Data Proxy Industrializtaion/Education/ipehd_1864_edu_stud.csv") %>%
+  transmute(kreiskey1864,
+            county,
+            students1864 = edu1864_pub_ele_stud + edu1864_pub_mim_stud_m + edu1864_pub_mif_stud_f 
+            + edu1864_pub_rea_stud + edu1864_pub_pgy_stud + edu1864_pub_gym_stud 
+            + edu1864_pub_sem_par + edu1864_pri_ele_stud + edu1864_pri_hsm_stud_m
+            + edu1864_pri_hsf_stud_f + edu1864_pri_voc_stud + edu1864_pri_sun_stud)%>%
+
+select(kreiskey1864, students1864)
+
+edu1864 <- kreiskeycleaner(edu1864, kreiskeychanger)
+
+edu1864 <- edu1864 %>%
+  group_by(kreiskey1864) %>%
+  summarise(
+    students1864 = sum(students1864))
+
+maindf <- left_join(maindf, edu1864)
+
+# Here is where we stopped and ran the first regressions
+# Read in Industrialization variables from 1849 starting with Industry worker
+# Transmute does not work, joins all variables to maindf but not the three categories
+
+factorywork1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Factory 1849_occ_fac Kopie.csv",
+                     sep = ",")  %>%
+ transmute(kreiskey1849,
+    textileworker1849 = fac1849_spin_woolyarn_workers + fac1849_spin_combyarn_workers
+    + fac1849_spin_cotton_workers + fac1849_spin_flax_workers + fac1849_spin_tow_workers
+    + fac1849_looms_silk_masters + fac1849_looms_silk_assistants + fac1849_looms_cotton_masters
+    + fac1849_looms_cotton_assistants + fac1849_looms_linen_masters + fac1849_looms_linen_assistants
+    + fac1849_looms_wool_masters + fac1849_looms_wool_assistants + fac1849_looms_hosiery_masters
+    + fac1849_looms_hosiery_assistants + fac1849_looms_band_masters + fac1849_looms_band_assistants
+    + fac1849_looms_others_masters + fac1849_looms_others_assistants + fac1849_fact_thread_workers
+    + fac1849_fact_silk_ao_workers + fac1849_wool_cloth_workers + fac1849_halfwool_cloth_workers
+    + fac1849_cotton_workers + fac1849_linen_workers +fac1849_silk_workers
+    + fac1849_shawl_workers + fac1849_band_workers + fac1849_carpet_workers
+    + fac1849_passement_workers + fac1849_hosiery_workers + fac1849_laces_workers
+    + fac1849_bleach_unit_workers + fac1849_bleach_yarn_workers + fac1849_dye_turkeyred_workers
+    + fac1849_dye_silk_workers + fac1849_dye_others_workers + fac1849_print_workers,
+    
+    metal_miningworker1849 = fac1849_ironworks_workers +  fac1849_wireworks_workers
+    + fac1849_rake_workers +  fac1849_sewingneedle_workers +  fac1849_fixingpin_workers
+    + fac1849_ironware_workers + fac1849_steel_workers + fac1849_steelware_workers
+    + fac1849_copperhammer_workers + fac1849_brass_workers + fac1849_smeltery_workers
+    + fac1849_bronzeware_workers + fac1849_engines_workers + fac1849_glassworks_workers
+    + fac1849_grindery_workers + fac1849_mirrorglass_workers +  fac1849_porcelain_workers
+    + fac1849_earthenware_workers + fac1849_chemicals_workers + fac1849_potboilery_workers
+    + fac1849_limekiln_workers + fac1849_brickworks_workers + fac1849_tarfurnace_workers,
+    
+    other_factoryworker1849 = mill1849_water_masters + mill1849_water_assistants
+    + mill1849_post_mills_masters + mill1849_post_mills_assistants
+    + mill1849_dutchmills_masters + mill1849_dutchmills_assistants
+    + mill1849_animals_workers + mill1849_steam_workers + mill1849_oil_workers
+    + mill1849_fulling_workers + mill1849_tan_workers + mill1849_saw_german_workers
+    + mill1849_saw_dutch_workers + mill1849_saw_circular_workers + mill1849_other_workers)%>%
+  
+  select(kreiskey1849, textileworker1849, metal_miningworker1849, other_factoryworker1849)
+
+  
+maindf <- left_join(maindf, factorywork1849)
+
+# Reading in people working on farms full time and subsidiary in 1849
+# Test if this is negatively correlated with Turner
+
+farmer1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Farmer 1849_occ_agri.csv",
+                            sep = ",")  %>% 
+  mutate(kreiskey1849,
+         farmer1849 = (occ1849_farming_main_occu +
+                       occ1849_farming_subsidiary_occu +
+                       occ1849_servant_m_farm +
+                       occ1849_servant_f_farm)) %>%
+  
+  select(kreiskey1849, farmer1849)
+
+maindf <- left_join(maindf, farmer1849)
+
+# Reading in all steam powered machines and engines
+# Leftjoin and transmute do not work
+
+steamengines <- read.csv("../data/Data Proxy Industrializtaion/Industrialization/1849_indu_tec.csv",
+                             sep = ",") %>%
+  
+  transmute(kreiskey1849, 
+            steamengines1849 = mill1849_steam_grindingstones + steam1849_spinnery_engines
+            + steam1849_spinnery_horsepower + steam1849_weaving_engines
+            + steam1849_weaving_horsepower + steam1849_fulling_engines
+            + steam1849_fulling_horsepower + steam1849_engineworks_engines
+            + steam1849_engineworks_horsepower + steam1849_flourmill_engines
+            + steam1849_flourmill_horsepower + steam1849_cuttingmill_engines
+            + steam1849_cuttingmill_horsepower + steam1849_othermills_engines
+            + steam1849_othermills_horsepower + steam1849_mining_engines
+            + steam1849_mining_horsepower + steam1849_shipping_engines
+            + steam1849_shipping_horsepower + steam1849_metal_fab_engines
+            + steam1849_metal_fab_horsepower + steam1849_railway_engines
+            + steam1849_railway_horsepower + steam1849_others_engines +
+            steam1849_others_horsepower)%>%
+  
+  select(kreiskey1849, steamengines1849)
+
+maindf <- left_join(maindf, steamengines)
+
+# Reading in Craftsmen in 1849, since its the highest share of occupational class
+# within the Turner
+
+craftsmen <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Craftsmen 1849_occ_craft Kopie.csv",
+                         sep = ",")
+  
+  transmute(kreiskey1849)
+
+  
+craftsmenlength <- dim(craftsmen)[2]
+craftsmenlengthonlydata <- select(craftsmen, !c(kreiskey1849, county, rb))
+
+for(i in 1:dim(craftsmenlengthonlydata)[1]) {
+  craftsmen$crafters[i] <- sum(craftsmenlengthonlydata[i,])
+}
+
+craftsmen <- select(craftsmen, kreiskey1849, crafters)
+
+
+maindf <- left_join(maindf, craftsmen)
 
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_share.RDS")
