@@ -1,16 +1,23 @@
 pacman::p_load(tidyverse,
                pastecs,
-               stargazer)
+               stargazer,
+               ggpubr,
+               ggscatter)
+
+install.packages("ggpubr")
+
+library(ggpubr)
 
 # this is our analysis file. first we load in the data. select only columns without NA for industry workers.
 dat <- readRDS("../data/turner_share.RDS") %>%
   distinct() %>%
+  # Exclude all NAs, note that you exclude Berlin, because NA for occ1864
   filter(!is.na(occ1864_ind),
-                !is.na(Gesamt64),
-                !is.na(countypop1864),
-                !is.na(rel1864_pro),
-                !is.na(rel1864_cat),
-                !is.na(rel1864_other))
+              !is.na(Gesamt64),
+              !is.na(countypop1864),
+              !is.na(rel1864_pro),
+              !is.na(rel1864_cat),
+              !is.na(rel1864_other))
 
 
 dat %>%
@@ -64,6 +71,7 @@ cor(dat$Gesamt64, dat$occ1864_ind)
 # creating a new dataframe with just the shares. 
 dat_share <- dat %>% transmute(
   kreiskey1864,
+  countypop1864,
   turner_share = Gesamt64/countypop1864, 
   indworker_share1864 = occ1864_ind/countypop1864,
   prot_share1864 = rel1864_pro/countypop1864,
@@ -81,7 +89,7 @@ dat_share <- dat %>% transmute(
   student_share1849 = students1849/countypop1849,
   prot_share1849 = rel1849_pro/countypop1849,)
 
-
+view(dat_share)
 # Regression industry worker and Truner
 ###########################################################################
 #                 MAIN MODEL Industry worker 1864
@@ -92,6 +100,7 @@ models <- list()
 
 models$basic <- lm(data = dat_share, turner_share ~ indworker_share1864)
 
+
 models$with_prot <- lm(data = dat_share, turner_share ~ indworker_share1864 +
                          prot_share1864)
 
@@ -99,7 +108,7 @@ models$with_edu <- lm(data = dat_share, turner_share ~ indworker_share1864 +
                         student_share1864)
 
 models$full <- lm(data = dat_share, turner_share ~ indworker_share1864 +
-                    prot_share1864 +
+                     prot_share1864 +
                     student_share1864)
 ###########################################################################
 # MODEL NAMES
@@ -123,9 +132,9 @@ stargazer(models,type = "text",
           covariate.labels = modelnames,
           dep.var.labels = "Share of Turner")
 
-# Regression industry worker and Truner
+# Regression industry worker and Turner
 ###########################################################################
-#                 MAIN MODEL Steam Engines 1849
+#                 MAIN MODEL Steam Engines 1849 - try per capita
 ###########################################################################
 
 models_steam <- list()
@@ -331,8 +340,16 @@ stargazer(models_factory,
           title = "Linear Model Results Factory",
           covariate.labels = modelnames_factory,
           dep.var.labels = "Share of Turner")
+############################################################################
+            # Plotting some graphs
 
-
+ggscatter(dat_share, x = "turner_share", y = "indworker_share1864",
+          add = lm(data = dat_share, turner_share ~ indworker_share1864), # Add regression line
+          conf.int = TRUE,                                  # Add confidence interval
+          add.params = list(color = "blue",
+                            fill = "lightgray")
+)+
+  stat_cor(method = "pearson", label.x = 0.2, label.y = 1)
 
 
 
