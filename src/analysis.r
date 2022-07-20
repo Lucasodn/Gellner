@@ -1,23 +1,19 @@
 pacman::p_load(tidyverse,
                pastecs,
-               stargazer,
-               ggpubr,
-               ggscatter)
+               stargazer)
 
-install.packages("ggpubr")
-
-library(ggpubr)
 
 # this is our analysis file. first we load in the data. select only columns without NA for industry workers.
 dat <- readRDS("../data/turner_share.RDS") %>%
-  distinct() %>%
-  # Exclude all NAs, note that you exclude Berlin, because NA for occ1864
-  filter(!is.na(occ1864_ind),
-              !is.na(Gesamt64),
-              !is.na(countypop1864),
-              !is.na(rel1864_pro),
-              !is.na(rel1864_cat),
-              !is.na(rel1864_other))
+  distinct()
+
+  # # Exclude all NAs, note that you exclude Berlin, because NA for occ1864
+  # filter(!is.na(occ1864_ind),
+  #             !is.na(Gesamt64),
+  #             !is.na(countypop1864),
+  #             !is.na(rel1864_pro),
+  #             !is.na(rel1864_cat),
+  #             !is.na(rel1864_other))
 
 
 dat %>%
@@ -30,7 +26,7 @@ dat %>%
   geom_histogram()
 
 
-# dealing with duisburg essen edge case
+# dealing with Duisburg and Essen as edge case
 edgecase <- filter(dat, kreiskey1849 %in% c(289, 290))
 
 edgecase <- edgecase %>% group_by(kreiskey1849) %>% summarize(popcivil = mean(popcivil),
@@ -61,11 +57,12 @@ edgecase <- edgecase %>% group_by(kreiskey1849) %>% summarize(popcivil = mean(po
 dat <- dat[-c(which(dat$kreiskey1849 %in% c(289, 290))),]
 
 
-edgecase
 dat <- rbind(dat, edgecase)
 
 # get the correlation coefficient, which is 0.44
-cor(dat$Gesamt64, dat$occ1864_ind)
+dat.cor <- dat[complete.cases(dat),]
+
+cor(dat.cor$Gesamt64, dat.cor$occ1864_ind)
 
 
 # creating a new dataframe with just the shares. 
@@ -89,7 +86,7 @@ dat_share <- dat %>% transmute(
   student_share1849 = students1849/countypop1849,
   prot_share1849 = rel1849_pro/countypop1849,)
 
-view(dat_share)
+
 # Regression industry worker and Truner
 ###########################################################################
 #                 MAIN MODEL Industry worker 1864
@@ -110,6 +107,12 @@ models$with_edu <- lm(data = dat_share, turner_share ~ indworker_share1864 +
 models$full <- lm(data = dat_share, turner_share ~ indworker_share1864 +
                      prot_share1864 +
                     student_share1864)
+
+plot(models$basic, 1)
+plot(models$basic, 3)
+plot(models$full, 1)
+plot(models$full, 3)
+
 ###########################################################################
 # MODEL NAMES
 modelnames <- c("Industry worker share",
@@ -151,6 +154,11 @@ models_steam$with_edu <- lm(data = dat_share, turner_share ~ steamengines_capita
 models_steam$full <- lm(data = dat_share, turner_share ~ steamengines_capita1849 +
                     prot_share1864 +
                     student_share1864)
+
+plot(models_steam$basic, 1)
+plot(models_steam$basic, 3)
+plot(models_steam$full, 1)
+plot(models_steam$full, 3)
 ###########################################################################
 # MODEL NAMES
 modelnames_steam<- c("Steam Engines per capita",
@@ -276,6 +284,10 @@ models_metal$with_edu <- lm(data = dat_share, turner_share ~ metal_miningworker_
 models_metal$full <- lm(data = dat_share, turner_share ~ metal_miningworker_share1849 +
                            prot_share1864 +
                            student_share1864)
+plot(models_metal$basic, 1)
+plot(models_metal$basic, 3)
+plot(models_metal$full, 1)
+plot(models_metal$full, 3)
 ###########################################################################
 # MODEL NAMES
 modelnames_metal<- c("Metal and Mining share",
@@ -318,6 +330,10 @@ models_factory$with_edu <- lm(data = dat_share, turner_share ~ factoryworker_sha
 models_factory$full <- lm(data = dat_share, turner_share ~ factoryworker_share1849 +
                           prot_share1864 +
                           student_share1864)
+plot(models_factory$basic, 1)
+plot(models_factory$basic, 3)
+plot(models_factory$full, 1)
+plot(models_factory$full, 3)
 ###########################################################################
 # MODEL NAMES
 modelnames_factory<- c("Factory worker share",
@@ -416,70 +432,6 @@ stargazer(models,
 
 
 
-
-
-
-
-models[["basic"]] <- lm(data = dat_share, turner_share ~ indworker_share)
-
-models[["basic_and_controls"]] <- lm(data = dat_share, turner_share ~ indworker_share + prot_share)
-
-summary(models$basic_and_controls)
-
-# Regression education and Truner
-
-cor(dat_share$turner_share, dat_share$student_share)
-
-models[["basic"]] <- lm(data = dat_share, turner_share ~ student_share)
-
-summary(models$basic)
-
-models[["basic_and_controls"]] <- lm(data = dat_share, turner_share ~ indworker_share * student_share + prot_share)
-
-summary(models$basic_and_controls)
-
-
-
-# creating a new dataframe with just the shares of Population 15 to 65
-dat_share15to65 <- dat %>% transmute(
-  kreiskey1864,
-  turner_share = Gesamt64/pop1864_tot_15to65, 
-  indworker_share = occ1864_ind/pop1864_tot_15to65,
-  prot_share = rel1864_pro/pop1864_tot_15to65,
-  cat_share = rel1864_cat/pop1864_tot_15to65,
-  other_share = rel1864_other/pop1864_tot_15to65
-)
-
-#(From Becker) We start with a parsimonious model that controls only for basic 
-# demographic and geographic measures, namely the shares of the population aged 
-# below 15 and above 60 (and the size of the county area).
-
-cor(dat_share15to65$turner_share, dat_share15to65$indworker_share)
-
-models[["basic"]] <- lm(data = dat_share15to65, turner_share ~ indworker_share)
-
-summary(models$"basic")
-
-models[["basic_and_controls"]] <- lm(data = dat_share15to65, turner_share ~ indworker_share + prot_share + cat_share)
-modelnames[["basic_and_controls"]] <- c("Industry Workers", "Protestants", "Catholics")
-
-summary(models$basic_and_controls)
-
-
-
-
-models$full <- lm(data = dat_share15to65, turner_share ~ indworker_share + student_share + prot_share + cat_share) 
-
-# for exporting tables, we use the "publish" directory. naming them .tex at the end allows latex to read them in. 
-
-# export tables for use in latex
-stargazer(models$basic_and_controls, out = "../publish/basic_model.tex",
-          title = "this is our first tex table!", covariate.labels = modelnames$basic_and_controls)
-
-
- stargazer(kreiskeychanger,
-           summary = FALSE,
-           out = "../publish/descriptive.tex", column.labels = c)
 
 
 

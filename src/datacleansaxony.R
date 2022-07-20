@@ -2,9 +2,9 @@
 library(tidyverse)
 require(readstata13)
 
-## Read in the .dta files
+## Read in the .dta file Turnvereine in the Kingdom of Saxony
 
-turnersaxony <- read.csv("../data/Proxy Nationalism/Turnvereine Kingdom of Saxony.csv",
+turnersaxony <- read.csv("../data/Proxy Nationalism/Turnvereine Saxony/Turnvereine Kingdom of Saxony.csv",
                          sep = ";")
 
 turnsaxony <- turnersaxony %>% dplyr::select(
@@ -12,6 +12,8 @@ turnsaxony <- turnersaxony %>% dplyr::select(
   Beruf_Gelehrte, Beruf_Kaufleute
 )
 
+
+# Group by City
 turnsaxony <- turnsaxony %>%
   group_by(cityname)%>%
   summarise(Gesamt = sum(Gesamt),
@@ -19,8 +21,9 @@ turnsaxony <- turnsaxony %>%
             Beruf_Gelehrte = sum(Beruf_Gelehrte),
             Beruf_Kaufleute = sum(Beruf_Kaufleute))
 
-
-# Read in Occupation Census Saxony
+# Read in Occupation Census Saxony, remember the Census only contains Data for the
+# 103 biggest cities. Since there ar 203 Cities containing Turnvereine we obviously 
+# loose at least 100 when matching them.
 
 occupation_saxony <- read.csv("../data/Data Proxy Industrializtaion/Berufsstatistik Sachsen 1861.csv",
                               sep = ";")%>%
@@ -33,6 +36,9 @@ occupation_saxony <- read.csv("../data/Data Proxy Industrializtaion/Berufsstatis
   
   select(cityname, farmer_saxony_1861, industryworker_saxony_1861, craftmens_saxony_1861,
          otherworkers_saxony_1861, citypop)
+
+# Match Cities in Census with Turncities, 90 of the 103 Cities in the Census 
+# contain a Turnverein
 
 occupation_saxony <- left_join(occupation_saxony, turnsaxony)
 

@@ -9,7 +9,7 @@ hornung_dt_ps <- readstata13::read.dta13("../data/Population&Rail/hornung-rail-p
 
 # Read in the .dta files
 # For Proxy Nationalism Turner in Prussia
-turnen <- read.csv("../data/Proxy Nationalism/Turnvereine Prussia.csv", sep = ";")
+turnen <- read.csv("../data/Proxy Nationalism/Turnvereine Prussia/Turnvereine Prussia.csv", sep = ";")
 
 readstata13::read.dta13("../data/Population&Rail/hornung-rail-panel-city.dta")
 
@@ -26,7 +26,7 @@ turn[turn == "na"] <- "Missing Value"
 
 # Select important variables for Population census. Kreiskey1849 is particularly
 # important to match Turncities to their county, to then later
-# match the with other data sets containing data only on county level.
+# match them with other data sets containing data only on county level.
 
 dat <- hornung_dt_ps %>%
   dplyr::select(townkey1849, city, year, popcivil, kreiskey1849) %>%
@@ -80,7 +80,7 @@ sep = ";"
 )
 
 
-matchmaker <- read.csv("../data/Proxy Nationalism/name_matches.csv", sep = ";")
+matchmaker <- read.csv("../data/Proxy Nationalism/Turnvereine Prussia/name_matches.csv", sep = ";")
 
 for (i in 1:length(matchmaker$Old)) {
   turn$city <- gsub(matchmaker$Old[i], matchmaker$New[i], turn$city)
@@ -89,13 +89,9 @@ for (i in 1:length(matchmaker$Old)) {
 turn <- turn %>% filter(!(city == ""))
 
 # Now manually check the city names of Turner and Hornung cities in csv.file
-# and rename them to then match them.
+# and rename them to then match them again.
 # Run the process again so all possible matches are matched.
 
-# Drop Variable Jahr (Gründungsjahr Verein) because its confusing and not necessary.
-
-## turn <- turn %>% select(!Jahr)
-## dat <- dat %>% select(!Jahr)
 
 
 # Merge the corrected version of Turner to Hornung cities for full match.
@@ -168,7 +164,7 @@ maindf <- maindf %>%
 
 
 # Since all Industrialisation Data is on county (Kreis) level, we group all Cities
-# to their Kreiskey to then merge with Idnustrialisation Data
+# to their Kreiskey to then merge with Industrialisation Data
 
 
 maindf[is.na(maindf)] <- 0
@@ -185,7 +181,7 @@ maindf <- maindf %>%
   )
 
 # The Data set of Hornung with which we merged the Turner misses 5 kreiskeys. 
-# These kreiskeys are from 5 Landkreise which are also a big City (cologne, Königsberg, etc.),
+# These kreiskeys are from 5 Landkreise which are also a big City (Cologne, Königsberg, etc.),
 # thus the missing Kreiskeys of these Landkreise are allocated to their City.
 # This is done by change the Kreiskey of the Landkreis to the same of the City.
 # To remember even though Hornung Data set is not perfect, it was good to merge Turner
@@ -221,7 +217,7 @@ kreiskeycleaner <- function(x, y) {
 # reading in the data set providing the population by age bracket. we use this to get
 # a proxy for the working population.
 
-pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/ipehd_1864_pop_demo (1).csv",
+pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1864_pop_demo (1).csv",
   sep = ",") %>% select(kreiskey1864, pop1864_tot_15to65)
 
 pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
@@ -229,14 +225,14 @@ pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
 
 # Here we are just grouping by doubled or trippled kreiskeys and summing the values
 # to get a single value per kreiskey
-# egal welche variablen du bei pop15 dazufügst, musst du die summarizen
+# Every variable added from the population data set needs to be summarized
 pop15to65 <- pop15to65 %>%
   group_by(kreiskey1864) %>%
   summarize(pop1864_tot_15to65 = sum(pop1864_tot_15to65))
 
 maindf <- left_join(maindf, pop15to65)
 
-# Because popcivil of Hronung Data set onyl provides data for population in a county,
+# Because popcivil of Hronung Data set only provides data for population in a county,
 # who live in cities, we read in full data on poulation. Including denomination,
 # which might be useful for later analysis. 
 # Reading in religious data in 1849 to get: 1) pop data at county level, 2) denomiation data.
@@ -299,8 +295,8 @@ maindf <- left_join(maindf, countypop1864)
 
 
 
-# Read in Industry worker, remember to use Kreiskeychanger
-# indu64 den wir schon mal eingelesen haben ist noch gespeichert fyi.
+# Read in Industry worker data from 1864, remember to use Kreiskeychanger
+
 Indu1864 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Industry 1864_occ_indu (1).csv",
                      sep = ",") %>% select(kreiskey1864, occ1864_ind)
 
@@ -311,7 +307,7 @@ Indu1864 <- kreiskeycleaner(Indu1864, kreiskeychanger)
 # Indu1864$occ1864_ind <- ifelse(is.na(Indu1864$occ1864_ind), 0, Indu1864$occ1864_ind)
 
 
-# one kreiskey has an NA a the stadt level but not the kreislevel, so we set it 
+# one kreiskey has an NA a the city level but not the kreis level, so we set it 
 # to zero so adding it up giving a sum value. 
 Indu1864$occ1864_ind[3] <- 0
 
@@ -325,7 +321,7 @@ group_by(kreiskey1864) %>%
 
 maindf <- left_join(maindf, Indu1864)
 
-# Read in Number of students for measuring Education
+# Read in Number of students in 1864 for measuring Education
 # Sum up all students in school, exclude Kindergarten and nursery.
 
 edu1864 <- read.csv("../data/Data Proxy Industrializtaion/Education/ipehd_1864_edu_stud.csv") %>%
@@ -349,7 +345,7 @@ maindf <- left_join(maindf, edu1864)
 
 # Here is where we stopped and ran the first regressions
 # Read in Industrialization variables from 1849 starting with Industry worker
-# Transmute does not work, joins all variables to maindf but not the three categories
+
 
 factorywork1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Factory 1849_occ_fac Kopie.csv",
                      sep = ",")  %>%
@@ -409,7 +405,7 @@ farmer1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Farmer 1
 maindf <- left_join(maindf, farmer1849)
 
 # Reading in all steam powered machines and engines
-# Leftjoin and transmute do not work
+
 
 steamengines <- read.csv("../data/Data Proxy Industrializtaion/Industrialization/1849_indu_tec.csv",
                              sep = ",") %>%
@@ -433,14 +429,14 @@ steamengines <- read.csv("../data/Data Proxy Industrializtaion/Industrialization
 
 maindf <- left_join(maindf, steamengines)
 
+view(steamengines)
+
 # Reading in Craftsmen in 1849, since its the highest share of occupational class
-# within the Turner
+# within the Turner. Craftsmen will not be categorized, taking craftsmen in general.
 
 craftsmen <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Craftsmen 1849_occ_craft Kopie.csv",
                          sep = ",")
   
-  #transmute(kreiskey1849)
-
   
 craftsmenlength <- dim(craftsmen)[2]
 craftsmenlengthonlydata <- select(craftsmen, !c(kreiskey1849, county, rb))

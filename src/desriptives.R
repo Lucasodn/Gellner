@@ -10,15 +10,19 @@ foundingturner <- read.csv("../data/Proxy Nationalism/Graphfounding.csv",
 # Plot
 foundingturner %>%
   tail(58) %>%
-  ggplot( aes(x=Year, y=Newly.Founded)) +
-  geom_point()
-ggtitle("Newly founded Trunvereine")
+  ggplot(aes(x=Year, y=Newly.Founded)) +
+  geom_point() +
+  labs(title = "Newly founded Turnvereine over time",
+       x ="Year",
+       y = "Number of Turnvereine") + theme_minimal()
 
-stargazer(models,
-          out = "../publish/full_modelindustry1864.tex",
-          title = "Linear Model Results Industry Worker 1864",
-          covariate.labels = modelnames,
-          dep.var.labels = "Share of Turner", font.size = "tiny")
+# this command saves the last plot
+ggsave("../publish/foundingturner.png", width = 7, height = 7)
+
+
+ggtitle("Newly founded Trunvereine") 
+
+
 
 foundingturner %>%
   tail(58) %>%
