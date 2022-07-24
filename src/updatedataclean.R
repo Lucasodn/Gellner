@@ -167,7 +167,7 @@ maindf <- maindf %>%
 # because it contained nearly all Turncities, which no other data set did.
 # This list is to help choose which kreiskeys are merged into one.
 
-kreiskeychanger <- data.frame(oldkk = c(4, 40, 65, 249, 286), newkk = c(3, 39, 64, 246, 281))
+kreiskeychanger <- data.frame(oldkk = c(4, 40, 326), newkk = c(3, 39, 325))
 
 
 # Read in file delienating the changes in the kreiskey over time. As the kreiskeys in 1849
@@ -198,7 +198,7 @@ kreiskeycleaner <- function(x, y) {
 # a proxy for the working population.
 
 pop15to65 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1864_pop_demo (1).csv",
-  sep = ",") %>% select(kreiskey1864, pop1864_tot_15to65)
+                      sep = ",") %>% select(kreiskey1864, pop1864_tot_15to65)
 
 pop15to65 <- kreiskeycleaner(pop15to65, kreiskeychanger)
 
@@ -218,24 +218,24 @@ maindf <- left_join(maindf, pop15to65)
 # Reading in religious data in 1849 to get: 1) pop data at county level, 2) denomiation data.
 
 countypop1849 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1849_rel_deno.csv",
-  sep = ","
+                          sep = ","
 ) %>%
   mutate(
     countypop1849 = (rel1849_pro +
-                    rel1849_cat +
-                    rel1849_greek +
-                    rel1849_menno+
-                    rel1849_jew),
+                       rel1849_cat +
+                       rel1849_greek +
+                       rel1849_menno+
+                       rel1849_jew),
     
     rel1849_other = (rel1849_greek +
-                rel1849_menno +
-                rel1849_jew)) %>%
-
-select(countypop1849, 
-       rel1849_pro, 
-       rel1849_cat, 
-       rel1849_other,
-       kreiskey1849)
+                       rel1849_menno +
+                       rel1849_jew)) %>%
+  
+  select(countypop1849, 
+         rel1849_pro, 
+         rel1849_cat, 
+         rel1849_other,
+         kreiskey1849)
 
 
 maindf <- left_join(maindf, countypop1849)
@@ -246,10 +246,10 @@ maindf <- left_join(maindf, countypop1849)
 countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Population/ipehd_1864_rel_deno (1).csv",
                           sep = ",") %>% 
   mutate(countypop1864 = (rel1864_pro +
-                          rel1864_cat + 
-                          rel1864_jew +
-                          rel1864_oth),
-                          rel1864_other = (rel1864_jew + rel1864_oth)) %>%
+                            rel1864_cat + 
+                            rel1864_jew +
+                            rel1864_oth),
+         rel1864_other = (rel1864_jew + rel1864_oth)) %>%
   select(kreiskey1864,
          countypop1864,
          rel1864_pro,
@@ -261,7 +261,7 @@ countypop1864 <- read.csv("../data/Data Proxy Industrializtaion/Religion&Populat
 countypop1864 <- kreiskeycleaner(countypop1864, kreiskeychanger)
 
 countypop1864 <- countypop1864 %>%
-group_by(kreiskey1864) %>%
+  group_by(kreiskey1864) %>%
   summarise(
     countypop1864 = sum(countypop1864),
     rel1864_pro = sum(rel1864_pro),
@@ -284,15 +284,18 @@ Indu1864 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Industry 1
 # to zero so adding it up giving a sum value.
 
 Indu1864$occ1864_ind[3] <- 0
-#Indu1864$occ1864_ind[154] <- 0
+Indu1864$occ1864_ind[39] <- 0
+Indu1864$occ1864_ind[64] <- 0
+Indu1864$occ1864_ind[123] <- 0
+Indu1864$occ1864_ind[154] <- 0
 
 Indu1864 <- kreiskeycleaner(Indu1864, kreiskeychanger)
 
 # Group Kreiskeys together for single observation
 Indu1864 <- Indu1864 %>%
-group_by(kreiskey1864) %>%
+  group_by(kreiskey1864) %>%
   summarise(
-  occ1864_ind = sum(occ1864_ind))
+    occ1864_ind = sum(occ1864_ind))
 
 
 maindf <- left_join(maindf, Indu1864)
@@ -331,106 +334,106 @@ maindf <- left_join(maindf, edu1864)
 
 
 factorywork1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Factory 1849_occ_fac Kopie.csv",
-                     sep = ",")  %>%
- transmute(kreiskey1849,
-    textileworker1849 = fac1849_spin_woolyarn_workers +
-      fac1849_spin_combyarn_workers +
-      fac1849_spin_cotton_workers +
-      fac1849_spin_flax_workers +
-      fac1849_spin_tow_workers +
-      fac1849_looms_silk_masters +
-      fac1849_looms_silk_assistants +
-      fac1849_looms_cotton_masters +
-      fac1849_looms_cotton_assistants +
-      fac1849_looms_linen_masters +
-      fac1849_looms_linen_assistants +
-      fac1849_looms_wool_masters +
-      fac1849_looms_wool_assistants +
-      fac1849_looms_hosiery_masters +
-      fac1849_looms_hosiery_assistants +
-      fac1849_looms_band_masters +
-      fac1849_looms_band_assistants +
-      fac1849_looms_others_masters +
-      fac1849_looms_others_assistants +
-      fac1849_fact_thread_workers +
-      fac1849_fact_silk_ao_workers +
-      fac1849_wool_cloth_workers +
-      fac1849_halfwool_cloth_workers +
-      fac1849_cotton_workers +
-      fac1849_linen_workers +
-      fac1849_silk_workers +
-      fac1849_shawl_workers +
-      fac1849_band_workers +
-      fac1849_carpet_workers +
-      fac1849_passement_workers +
-      fac1849_hosiery_workers +
-      fac1849_laces_workers +
-      fac1849_bleach_unit_workers +
-      fac1849_bleach_yarn_workers +
-      fac1849_dye_turkeyred_workers +
-      fac1849_dye_silk_workers +
-      fac1849_dye_others_workers +
-      fac1849_print_workers,
-    
-    metal_miningworker1849 = fac1849_ironworks_workers +
-      fac1849_wireworks_workers +
-      fac1849_rake_workers +
-      fac1849_sewingneedle_workers +
-      fac1849_fixingpin_workers +
-      fac1849_ironware_workers +
-      fac1849_steel_workers +
-      fac1849_steelware_workers +
-      fac1849_copperhammer_workers +
-      fac1849_brass_workers +
-      fac1849_smeltery_workers +
-      fac1849_bronzeware_workers +
-      fac1849_engines_workers +
-      fac1849_glassworks_workers +
-      fac1849_grindery_workers +
-      fac1849_mirrorglass_workers +
-      fac1849_porcelain_workers +
-      fac1849_earthenware_workers +
-      fac1849_chemicals_workers +
-      fac1849_potboilery_workers +
-      fac1849_limekiln_workers +
-      fac1849_brickworks_workers +
-      fac1849_tarfurnace_workers,
-    
-    other_factoryworker1849 = mill1849_water_masters +
-      mill1849_water_assistants +
-      mill1849_post_mills_masters +
-      mill1849_post_mills_assistants +
-      mill1849_dutchmills_masters +
-      mill1849_dutchmills_assistants +
-      mill1849_animals_workers +
-      mill1849_steam_workers +
-      mill1849_oil_workers +
-      mill1849_fulling_workers +
-      mill1849_tan_workers +
-      mill1849_saw_german_workers +
-      mill1849_saw_dutch_workers +
-      mill1849_saw_circular_workers +
-      mill1849_other_workers,
-    
-    all_factoryworker1849 = textileworker1849 +
-      metal_miningworker1849 + other_factoryworker1849) %>%
+                            sep = ",")  %>%
+  transmute(kreiskey1849,
+            textileworker1849 = fac1849_spin_woolyarn_workers +
+              fac1849_spin_combyarn_workers +
+              fac1849_spin_cotton_workers +
+              fac1849_spin_flax_workers +
+              fac1849_spin_tow_workers +
+              fac1849_looms_silk_masters +
+              fac1849_looms_silk_assistants +
+              fac1849_looms_cotton_masters +
+              fac1849_looms_cotton_assistants +
+              fac1849_looms_linen_masters +
+              fac1849_looms_linen_assistants +
+              fac1849_looms_wool_masters +
+              fac1849_looms_wool_assistants +
+              fac1849_looms_hosiery_masters +
+              fac1849_looms_hosiery_assistants +
+              fac1849_looms_band_masters +
+              fac1849_looms_band_assistants +
+              fac1849_looms_others_masters +
+              fac1849_looms_others_assistants +
+              fac1849_fact_thread_workers +
+              fac1849_fact_silk_ao_workers +
+              fac1849_wool_cloth_workers +
+              fac1849_halfwool_cloth_workers +
+              fac1849_cotton_workers +
+              fac1849_linen_workers +
+              fac1849_silk_workers +
+              fac1849_shawl_workers +
+              fac1849_band_workers +
+              fac1849_carpet_workers +
+              fac1849_passement_workers +
+              fac1849_hosiery_workers +
+              fac1849_laces_workers +
+              fac1849_bleach_unit_workers +
+              fac1849_bleach_yarn_workers +
+              fac1849_dye_turkeyred_workers +
+              fac1849_dye_silk_workers +
+              fac1849_dye_others_workers +
+              fac1849_print_workers,
+            
+            metal_miningworker1849 = fac1849_ironworks_workers +
+              fac1849_wireworks_workers +
+              fac1849_rake_workers +
+              fac1849_sewingneedle_workers +
+              fac1849_fixingpin_workers +
+              fac1849_ironware_workers +
+              fac1849_steel_workers +
+              fac1849_steelware_workers +
+              fac1849_copperhammer_workers +
+              fac1849_brass_workers +
+              fac1849_smeltery_workers +
+              fac1849_bronzeware_workers +
+              fac1849_engines_workers +
+              fac1849_glassworks_workers +
+              fac1849_grindery_workers +
+              fac1849_mirrorglass_workers +
+              fac1849_porcelain_workers +
+              fac1849_earthenware_workers +
+              fac1849_chemicals_workers +
+              fac1849_potboilery_workers +
+              fac1849_limekiln_workers +
+              fac1849_brickworks_workers +
+              fac1849_tarfurnace_workers,
+            
+            other_factoryworker1849 = mill1849_water_masters +
+              mill1849_water_assistants +
+              mill1849_post_mills_masters +
+              mill1849_post_mills_assistants +
+              mill1849_dutchmills_masters +
+              mill1849_dutchmills_assistants +
+              mill1849_animals_workers +
+              mill1849_steam_workers +
+              mill1849_oil_workers +
+              mill1849_fulling_workers +
+              mill1849_tan_workers +
+              mill1849_saw_german_workers +
+              mill1849_saw_dutch_workers +
+              mill1849_saw_circular_workers +
+              mill1849_other_workers,
+            
+            all_factoryworker1849 = textileworker1849 +
+              metal_miningworker1849 + other_factoryworker1849) %>%
   
   select(kreiskey1849, textileworker1849, metal_miningworker1849, 
          other_factoryworker1849, all_factoryworker1849)
 
-  
+
 maindf <- left_join(maindf, factorywork1849)
 
 # Reading in people working on farms full time and subsidiary in 1849
 # Test if this is negatively correlated with Turner
 
 farmer1849 <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Farmer 1849_occ_agri.csv",
-                            sep = ",")  %>% 
+                       sep = ",")  %>% 
   mutate(kreiskey1849,
          farmer1849 = (occ1849_farming_main_occu +
-                       occ1849_farming_subsidiary_occu +
-                       occ1849_servant_m_farm +
-                       occ1849_servant_f_farm)) %>%
+                         occ1849_farming_subsidiary_occu +
+                         occ1849_servant_m_farm +
+                         occ1849_servant_f_farm)) %>%
   
   select(kreiskey1849, farmer1849)
 
@@ -440,7 +443,7 @@ maindf <- left_join(maindf, farmer1849)
 
 
 steamengines <- read.csv("../data/Data Proxy Industrializtaion/Industrialization/1849_indu_tec.csv",
-                             sep = ",") %>%
+                         sep = ",") %>%
   
   transmute(kreiskey1849, 
             steamengines1849 = mill1849_steam_grindingstones +
@@ -467,7 +470,7 @@ steamengines <- read.csv("../data/Data Proxy Industrializtaion/Industrialization
               steam1849_railway_engines +
               steam1849_railway_horsepower +
               steam1849_others_engines +
-            steam1849_others_horsepower)%>%
+              steam1849_others_horsepower)%>%
   
   select(kreiskey1849, steamengines1849)
 
@@ -478,9 +481,9 @@ maindf <- left_join(maindf, steamengines)
 # within the Turner. Craftsmen will not be categorized, taking craftsmen in general.
 
 craftsmen <- read.csv("../data/Data Proxy Industrializtaion/Occupation/Craftsmen 1849_occ_craft Kopie.csv",
-                         sep = ",")
-  
-  
+                      sep = ",")
+
+
 craftsmenlength <- dim(craftsmen)[2]
 craftsmenlengthonlydata <- select(craftsmen, !c(kreiskey1849, county, rb))
 
@@ -528,4 +531,4 @@ serv1849 <- select(serv1849, kreiskey1849, servs)
 
 maindf <- left_join(maindf, serv1849)
 # save file for future procesing
-saveRDS(maindf, file = "../data/turner_share.RDS")
+saveRDS(maindf, file = "../data/turner_sharechange.RDS")

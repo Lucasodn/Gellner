@@ -70,7 +70,9 @@
 ########### DATA ABOVE IS JUST FOR REFERENCE 
 
 #loading in packages.
-pacman::p_load(tidyverse, ape)
+pacman::p_load(tidyverse, ape, xtable, geosphere)
+
+
 
 # !!!! remember to setwd() to src file.!!!! 
  
@@ -158,9 +160,11 @@ dat.dists.inv[is.infinite(dat.dists.inv)] <- 0
 
 # Compute Moran's I
 
-Moran.I(dat_existing_turnverein$turnvereine, dat_existing_turnverein.dists.inv)
+tables <- list()
 
-Moran.I(dat$Gesamt, dat.dists.inv)
+tables$moranGer <- Moran.I(dat_existing_turnverein$turnvereine, dat_existing_turnverein.dists.inv)
+
+tables$moranGerGesamt <-  Moran.I(dat$Gesamt, dat.dists.inv)
 
 
 # Now For Turnvereine existing in Prussia
@@ -197,14 +201,56 @@ dat_prussia.dists.inv[is.infinite(dat_prussia.dists.inv)] <- 0
 
 # Compute Moran's I for Prussia
 
-Moran.I(dat_existing_turnverein_prussia$turnvereine, dat_existing_turnverein_prussia.dists.inv)
 
-Moran.I(dat_prussia$Gesamt, dat_prussia.dists.inv)
+tables$moranPrussia <- Moran.I(dat_existing_turnverein_prussia$turnvereine, dat_existing_turnverein_prussia.dists.inv)
 
-# calculating a coefficient for divsion as test
-test <- data.frame(x =1, y =  0.17, z = 0.13)
+tables$moranPrussiaGesamt <- Moran.I(dat_prussia$Gesamt, dat_prussia.dists.inv)
 
-sd(test)
+# to create the table, make sure you account for all columns. 
+# they must have the same length per row, and the same number of columns
+tables$tableprussia <- data.frame("Model" = c("Turnvereine", "Turner"),
+                "Observed" = c(tables$moranPrussia$observed, tables$moranPrussiaGesamt$observed),
+                "Expected" = c(tables$moranPrussia$expected, tables$moranPrussiaGesamt$expected),
+                "SD" = c(tables$moranPrussia$sd, tables$moranPrussiaGesamt$sd),
+                "P value" = c(tables$moranPrussia$p.value, tables$moranPrussiaGesamt$p.value))
+
+# creates the tex output
+stargazer(tables$tableprussia,
+          type = "latex",
+          summary = FALSE,
+          out = "../publish/moranPrussia.tex",
+          digits = 4,
+          title = "Spatial Autocorrelation test, Prussia",
+          subtitle = "Moran's I")
+
+# just for viewing in the terminal
+stargazer(tables$tableprussia, type = "text",
+          summary = FALSE,
+          digits = 4,
+          title = "Spatial Autocorrelation test, Prussia")
+
+
+
+tables$tableger <- data.frame("Model" = c("Number of Turnvereine", "Number of Members"),
+                "Observed" = c(tables$moranGer$observed, tables$moranGerGesamt$observed),
+                "Expected" = c(tables$moranGer$expected, tables$moranGerGesamt$expected),
+                "SD" = c(tables$moranGer$sd, tables$moranGerGesamt$sd),
+                "P value" = c(tables$moranGer$p.value, tables$moranGerGesamt$p.value))
+
+# creates the tex output
+stargazer(tables$tableger,
+          type = "latex",
+          summary = FALSE, out = "../publish/moranGer.tex",
+          digits = 4,
+          title = "Spatial Autocorrelation test, Germany")
+
+# just for viewing in the terminal
+stargazer(tables$tableger, type = "text",
+          summary = FALSE,
+          digits = 4,
+          title = "Spatial Autocorrelation test, Germany")
+
+
 
 
 
