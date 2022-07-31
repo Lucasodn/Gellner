@@ -70,7 +70,7 @@
 ########### DATA ABOVE IS JUST FOR REFERENCE 
 
 #loading in packages.
-pacman::p_load(tidyverse, ape, xtable, geosphere)
+pacman::p_load(tidyverse, ape, xtable, geosphere, sf, devtools)
 
 
 
@@ -208,7 +208,7 @@ tables$moranPrussiaGesamt <- Moran.I(dat_prussia$Gesamt, dat_prussia.dists.inv)
 
 # to create the table, make sure you account for all columns. 
 # they must have the same length per row, and the same number of columns
-tables$tableprussia <- data.frame("Model" = c("Turnvereine", "Turner"),
+tables$tableprussia <- data.frame("Model" = c("Number of Turnvereine", "Number of Members"),
                 "Observed" = c(tables$moranPrussia$observed, tables$moranPrussiaGesamt$observed),
                 "Expected" = c(tables$moranPrussia$expected, tables$moranPrussiaGesamt$expected),
                 "SD" = c(tables$moranPrussia$sd, tables$moranPrussiaGesamt$sd),
@@ -250,7 +250,14 @@ stargazer(tables$tableger, type = "text",
           digits = 4,
           title = "Spatial Autocorrelation test, Germany")
 
+# Read in shapefile with centroids+
+
+centroid <- sf::st_read("../data/Data Proxy Industrializtaion/Centroid.qml", layer = "layer_styles")
 
 
+install.packages("rgeos", repos="http://R-Forge.R-project.org", type="source")
+install.packages("rgdal", repos="http://R-Forge.R-project.org", type="source")
+library(devtools)
+install_github("r-spatial/sf", configure.args = "--with-proj-lib=/usr/local/lib/")
 
 

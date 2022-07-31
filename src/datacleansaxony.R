@@ -60,6 +60,11 @@ cor(occupation_saxony$Gesamt, occupation_saxony$industryworker_saxony_1861)
 
 # creating a new dataframe with just the shares. 
 saxony_share <- occupation_saxony %>% transmute(
+  citypop,
+  farmer_saxony_1861,
+  industryworker_saxony_1861,
+  Gesamt,
+  craftmens_saxony_1861,
   turner_sharesaxony = Gesamt/citypop,
   farmer_sharesaxony = farmer_saxony_1861/citypop,
   industryworker_sharesaxony = industryworker_saxony_1861/citypop,
@@ -136,7 +141,7 @@ models_craftsaxony$with_craft <- lm(data = saxony_share, turner_sharesaxony ~ cr
 
 ###########################################################################
 # MODEL NAMES
-modelnames_craftsaxony <- c("Craftsmen")
+modelnames_craftsaxony <- c("Craftsmen share")
 
 
 ###########################################################################
@@ -153,3 +158,42 @@ stargazer(models_craftsaxony,type = "text",
           title = "Linear Model Results Saxony Craft",
           covariate.labels = modelnames_craftsaxony,
           dep.var.labels = "Share of Turner")
+
+###########################################################################
+#                 MAIN MODEL Kingdom of Saxony Absolut Numbers
+###########################################################################
+
+models_saxony <- list()
+
+models_saxony$basic <- lm(data = saxony_share, Gesamt ~ citypop)
+
+models_saxony$ind <- lm(data = saxony_share, Gesamt ~ citypop + 
+                            industryworker_saxony_1861)
+
+models_saxony$full <- lm(data = saxony_share, Gesamt ~ citypop + 
+                            industryworker_saxony_1861 + 
+                            craftmens_saxony_1861)
+
+
+###########################################################################
+# MODEL NAMES
+modelnames_saxonyabsolut <- c("Citypopulation",
+                       "Industry worker share",
+                       "Craftsmen")
+
+
+###########################################################################
+# EXTRACT MODEL FOR PUBLISHING
+stargazer(models_saxony,
+          out = "../publish/full_modelsaxonyabsolut.tex",
+          title = "Linear Model Results Saxony",
+          covariate.labels = modelnames_saxonyabsolut,
+          dep.var.labels = "Number of Turner", font.size = "tiny")
+
+
+stargazer(models_saxony,type = "text",
+          out = "../misc/modelsaxonyabsolut.txt",
+          title = "Linear Model Results Saxony",
+          covariate.labels = modelnames_saxonyabsolut,
+          dep.var.labels = "Number of Turner")
+

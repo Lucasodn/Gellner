@@ -530,5 +530,11 @@ for(i in 1:dim(serv1849lengthonlydata)[1]) {
 serv1849 <- select(serv1849, kreiskey1849, servs)
 
 maindf <- left_join(maindf, serv1849)
+# Get Countysize
+
+countysize <- readstata13::read.dta13("../data/Data Proxy Industrializtaion/becker_education.dta") %>%
+  select(kreiskey1849, area1816_qkm)
+
+maindf <- left_join(maindf, countysize)
 # save file for future procesing
 saveRDS(maindf, file = "../data/turner_sharechange.RDS")
