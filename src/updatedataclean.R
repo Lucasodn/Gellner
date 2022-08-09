@@ -74,8 +74,7 @@ write.csv(dplyr::filter(
   matches,
   is_matched == FALSE
 ),
-"../data/Proxy Nationalism/matches_reference.csv",
-sep = ";"
+"../data/Proxy Nationalism/matches_reference.csv"
 )
 
 

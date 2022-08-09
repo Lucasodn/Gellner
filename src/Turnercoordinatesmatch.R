@@ -250,14 +250,9 @@ stargazer(tables$tableger, type = "text",
           digits = 4,
           title = "Spatial Autocorrelation test, Germany")
 
-# Read in shapefile with centroids+
+# Read in shapefile with centroids cannot load sf package
 
 centroid <- sf::st_read("../data/Data Proxy Industrializtaion/Centroid.qml", layer = "layer_styles")
 
-
-install.packages("rgeos", repos="http://R-Forge.R-project.org", type="source")
-install.packages("rgdal", repos="http://R-Forge.R-project.org", type="source")
-library(devtools)
-install_github("r-spatial/sf", configure.args = "--with-proj-lib=/usr/local/lib/")
 
 

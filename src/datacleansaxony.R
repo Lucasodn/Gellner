@@ -37,7 +37,7 @@ occupation_saxony <- read.csv("../data/Data Proxy Industrializtaion/Berufsstatis
   select(cityname, farmer_saxony_1861, industryworker_saxony_1861, craftmens_saxony_1861,
          otherworkers_saxony_1861, citypop)
 
-# Match Cities in Census with Turncities, 90 of the 103 Cities in the Census 
+# Match Cities in Census with Turncities, 90 or 89? of the 103 Cities in the Census 
 # contain a Turnverein
 
 occupation_saxony <- left_join(occupation_saxony, turnsaxony)
@@ -70,6 +70,12 @@ saxony_share <- occupation_saxony %>% transmute(
   industryworker_sharesaxony = industryworker_saxony_1861/citypop,
   craftsmen_sharesaxony = craftmens_saxony_1861/citypop,)
 
+saxony_share1 <- na.omit(saxony_share)
+
+mean(saxony_share1$turner_sharesaxony)
+
+scatter.smooth(saxony_share1$turner_sharesaxony, saxony_share1$industryworker_sharesaxony, main='Ind worker vs. Turner')
+
 ###########################################################################
 #                 MAIN MODEL Kingdom of Saxony only Industry
 ###########################################################################
@@ -77,7 +83,7 @@ saxony_share <- occupation_saxony %>% transmute(
 models_saxony <- list()
 
 
-models_saxony$basic <- lm(data = saxony_share, turner_sharesaxony ~ industryworker_sharesaxony)
+models_saxony$basic <- lm(data = saxony_share1, turner_sharesaxony ~ industryworker_sharesaxony)
 
 
 ###########################################################################
@@ -108,7 +114,7 @@ stargazer(models_saxony,type = "text",
 models_farmersaxony <- list()
 
 
-models_farmersaxony$with_farmer <- lm(data = saxony_share, turner_sharesaxony ~ farmer_sharesaxony)
+models_farmersaxony$with_farmer <- lm(data = saxony_share1, turner_sharesaxony ~ farmer_sharesaxony)
 
 ###########################################################################
 # MODEL NAMES
@@ -134,10 +140,10 @@ stargazer(models_farmersaxony,type = "text",
 #                 MAIN MODEL Kingdom of Saxony
 ###########################################################################
 
- models_craftsaxony <- list()
+models_craftsaxony <- list()
 
 
-models_craftsaxony$with_craft <- lm(data = saxony_share, turner_sharesaxony ~ craftsmen_sharesaxony)
+models_craftsaxony$with_craft <- lm(data = saxony_share1, turner_sharesaxony ~ craftsmen_sharesaxony)
 
 ###########################################################################
 # MODEL NAMES
